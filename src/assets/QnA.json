@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "What does it mean to be a 'Tech Partner' rather than an agency?",
+    "answer": "Unlike traditional agencies that work on a per-project basis, we operate as your dedicated tech department. We don't just deliver a product and leave; we integrate with your business to provide long-term strategic value, continuous innovation, and a lifetime commitment to your digital growth."
+  },
+  {
+    "id": 2,
+    "question": "How does the 'Lifetime Connection' work?",
+    "answer": "Our partnership doesn't have an expiration date. Once we build your platform, we stay connected to monitor performance, suggest proactive upgrades, and ensure your technology evolves alongside market trends. We are your permanent technical allies, ensuring you never have to navigate the digital landscape alone."
+  },
+  {
+    "id": 3,
+    "question": "What core services do you provide within this partnership?",
+    "answer": "We provide end-to-end ecosystem development: from initial UI/UX strategy and custom software engineering to DevOps, cloud infrastructure management, and scaling. As your partners, we handle the heavy technical lifting so you can focus entirely on your core business operations."
+  },
+  {
+    "id": 4,
+    "question": "What is your primary technology stack?",
+    "answer": "Our team specializes in high-performance, scalable stacks including React, Next.js, Node.js, and Python. We choose technologies that aren't just trendy today, but are robust enough to support your business for years to come, ensuring long-term maintainability and speed."
+  },
+  {
+    "id": 5,
+    "question": "How do you handle project timelines and delivery?",
+    "answer": "We follow Agile methodologies to ensure rapid, iterative releases. While a standard platform may take 4–8 weeks to launch, our partnership model means we continue to refine, update, and expand your features indefinitely based on real-user data and your evolving business goals."
+  },
+  {
+    "id": 6,
+    "question": "Are the solutions you build fully responsive and future-proof?",
+    "answer": "Yes. Every line of code is written with the future in mind. We build fully responsive, mobile-first interfaces that are rigorously tested. Because we stay with you for the long haul, we ensure your site remains compatible with new devices and browser standards as they emerge."
+  },
+  {
+    "id": 7,
+    "question": "Do you provide ongoing support and maintenance?",
+    "answer": "Support is at the heart of our partnership. We provide proactive maintenance, 24/7 security monitoring, and regular performance audits. Since we are your lifetime tech partners, we treat your platform's health as our own priority."
+  },
+  {
+    "id": 8,
+    "question": "Can you modernize or scale our existing legacy systems?",
+    "answer": "Absolutely. We specialize in transforming outdated systems into modern, scalable architectures. We manage the migration and modernization process carefully to ensure your business remains operational while we build a more powerful foundation for your future."
+  },
+  {
+    "id": 9,
+    "question": "How do you handle integrations with other business tools?",
+    "answer": "We ensure your tech stack 'talks' to your entire business. We handle complex API integrations, from CRM and ERP systems to payment gateways and custom internal tools, creating a unified and automated digital ecosystem for your team."
+  },
+  {
+    "id": 10,
+    "question": "How do we begin our partnership?",
+    "answer": "It starts with a deep-dive discovery session where we learn about your vision, not just your requirements. We then draft a strategic roadmap. From that point on, our teams are linked, and we begin the journey of building and growing your digital presence together."
+  },
+  {
+    "id": 11,
+    "question": "What happens after the initial product launch?",
+    "answer": "Launch day is just the beginning. We enter a continuous optimization phase where we analyze user behavior, fix bugs, and plan the next set of features. Our goal is to ensure your technology never becomes stagnant or obsolete."
+  },
+  {
+    "id": 12,
+    "question": "How do you ensure our application can grow with us?",
+    "answer": "We build with 'Infinite Scalability' in mind. By using modular architecture and cloud-native solutions, we ensure your application can handle 100 users or 1,000,000 users without a hitch. As your partner, we manage that scaling process every step of the way."
+  }
+]

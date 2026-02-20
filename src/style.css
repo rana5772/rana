@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+@import "tailwindcss";
+
+* {
+  /* border: 1px solid crimson; */
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0f4ed4;
+  --first-color: #4b5edb;
+  --second-color: #7faaf2;
+}
+
+@layer components {
+  .para {
+    @apply text-gray-800 text-[18px] text-justify;
+  }
+
+  .blue-text {
+    @apply bg-gradient-to-b from-[var(--first-color)] to-[var(--second-color)] font-semibold bg-clip-text text-transparent;
+  }
+
+  .blue-bg {
+    @apply bg-gradient-to-r from-[var(--second-color)] to-[var(--first-color)];
+  }
+}
+
+.new-font {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.background {
+  position: fixed;
+  z-index: -100000000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #eaeeff;
+  overflow: hidden;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+a.active {
+  color: var(--primary-color);
+}
+
+footer a.active {
+  color: var(--primary-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.ball {
+  position: absolute;
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  animation: move linear infinite;
+}
+
+.ball:nth-child(1) {
+  color: #38bdf8;
+  top: 77%;
+  left: 88%;
+  animation-duration: 32s;
+  animation-delay: -3s;
+  transform-origin: 16vw -2vh;
+  box-shadow: 60vmin 0 20vmin currentColor;
+}
+
+.ball:nth-child(2) {
+  color: #818cf8;
+  top: 42%;
+  left: 2%;
+  animation-duration: 28s;
+  animation-delay: -29s;
+  transform-origin: -19vw 21vh;
+  box-shadow: -60vmin 0 25vmin currentColor;
+}
+
+.ball:nth-child(3) {
+  color: #fb7185;
+  top: 10%;
+  left: 30%;
+  animation-duration: 30;
+  animation-delay: -8s;
+  transform-origin: -22vw 3vh;
+  box-shadow: 60vmin 0 22vmin currentColor;
+}
+
+.ball:nth-child(4) {
+  color: #f472b6;
+  top: 50%;
+  left: 79%;
+  animation-duration: 13s;
+  animation-delay: -21s;
+  transform-origin: -17vw -6vh;
+  box-shadow: 60vmin 0 24vmin currentColor;
+}
+
+.ball:nth-child(5) {
+  color: #2dd4bf;
+  top: 46%;
+  left: 15%;
+  animation-duration: 18s;
+  animation-delay: -40s;
+  transform-origin: 4vw 0vh;
+  box-shadow: -60vmin 0 22.5vmin currentColor;
+}
+
+.ball:nth-child(6) {
+  color: #a78bfa;
+  top: 77%;
+  left: 16%;
+  animation-duration: 15s;
+  animation-delay: -10s;
+  transform-origin: 18vw 4vh;
+  box-shadow: 60vmin 0 21vmin currentColor;
+}
+
+.ball:nth-child(7) {
+  color: #fbbf24;
+  top: 22%;
+  left: 17%;
+  animation-duration: 25s;
+  animation-delay: -6s;
+  transform-origin: 1vw -23vh;
+  box-shadow: -60vmin 0 25vmin currentColor;
+}
+
+.ball:nth-child(8) {
+  color: #60a5fa;
+  top: 41%;
+  left: 47%;
+  animation-duration: 20s;
+  animation-delay: -28s;
+  transform-origin: 25vw -3vh;
+  box-shadow: 60vmin 0 23.5vmin currentColor;
+}
