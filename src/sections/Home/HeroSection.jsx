@@ -16,7 +16,7 @@ const FeatureSection = ({
           className={`flex justify-center ${reverse ? "order-1 md:order-2" : ""}`}
         >
           <img
-            data-aos="fade-up"
+            data-aos="zoom-in"
             src={image}
             alt={title}
             className={`w-full h-auto transform transition duration-500 ${imageClass}`}
