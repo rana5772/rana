@@ -22,7 +22,6 @@ const features = [
     description:
       "Secure and scalable hosting solutions paired with seamless domain management to keep your business online.",
     icon: Globe,
-    animation: "flip-up",
   },
   {
     title: "Search Engine Optimization",
@@ -78,10 +77,6 @@ const FeaturesSection = () => {
             <div
               key={index}
               className="group bg-white/75 hover:bg-white backdrop-blur-2xl p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:border-blue-500"
-              /* Logic: If feature.animation exists, apply it. 
-                 Otherwise, pass undefined so the attribute isn't rendered. 
-              */
-              data-aos={feature.animation || undefined}
             >
               {/* Icon Container */}
               <div className="blue-bg p-3 rounded-md mb-6 flex items-center justify-center transition-colors duration-300 group-hover:bg-blue-600">

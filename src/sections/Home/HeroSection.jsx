@@ -7,7 +7,7 @@ const FeatureSection = ({
   description,
   features,
   reverse = false,
-  imageClass = "scale-95 hover:scale-100",
+  imageClass = "scale-95",
 }) => {
   return (
     <section className="max-w-7xl mx-auto">
@@ -16,6 +16,7 @@ const FeatureSection = ({
           className={`flex justify-center ${reverse ? "order-1 md:order-2" : ""}`}
         >
           <img
+            data-aos="fade-up"
             src={image}
             alt={title}
             className={`w-full h-auto transform transition duration-500 ${imageClass}`}
@@ -76,7 +77,7 @@ const GridSection = () => {
         image="/images/3.svg"
         title="Adaptable for All Screen Sizes"
         description="Responsive, modern and user-friendly layouts designed to look stunning on every screen - from smartphones to desktops."
-        imageClass="scale-100 hover:scale-105"
+        imageClass="scale-100"
         features={[
           "Mobile-First Approach for seamless on-the-go browsing",
           "Fluid Grids & Layouts that adapt to any screen size",

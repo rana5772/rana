@@ -80,11 +80,7 @@ const TimelineSection = () => {
                 {item.displayNumber}
               </div>
 
-              {/* Card Body (Animated via data-aos) */}
               <div
-                data-aos="fade-left"
-                data-aos-delay={index * 150} // Staggered entrance
-                data-aos-duration="800"
                 className="bg-white border border-gray-100 rounded-md p-5 relative 
                 before:content-[''] before:absolute before:top-4 before:-left-2 
                 before:w-4 before:h-4 before:bg-white before:border-l before:border-b before:border-gray-100 before:rotate-45 shadow-sm"
