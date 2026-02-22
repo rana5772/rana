@@ -1,0 +1,67 @@
+/**
+ * Design tokens – semantic CSS variables for theming.
+ *
+ * To change the theme: edit the values below. All components use these
+ * semantic names (e.g. --primary-text, --gradient-start) instead of
+ * raw colors, so one place controls the look site-wide.
+ */
+
+:root {
+  /* Primary (brand) */
+  --primary: #0f4ed4;
+  --primary-hover: #2563eb;
+  --primary-text: #1d4ed8;
+  --primary-text-muted: #3b82f6;
+
+  /* Gradient (buttons, highlights) */
+  --gradient-start: #4b5edb;
+  --gradient-end: #7faaf2;
+
+  /* Backgrounds */
+  --bg-page: #eaeeff;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.2);
+
+  /* Text */
+  --text-heading: #0f172a;
+  --text-body: #64748b;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Borders & focus */
+  --border-default: #e2e8f0;
+  --border-focus: var(--primary-text);
+
+  /* Decorative (e.g. balls, timeline steps) */
+  --decorative-cyan: #38bdf8;
+  --decorative-indigo: #818cf8;
+  --decorative-rose: #fb7185;
+  --decorative-pink: #f472b6;
+  --decorative-teal: #2dd4bf;
+  --decorative-violet: #a78bfa;
+  --decorative-amber: #fbbf24;
+  --decorative-sky: #60a5fa;
+
+  /* Timeline step colors (optional theming) */
+  --timeline-step-1: #1d8cf8;
+  --timeline-step-2: #fd5d93;
+  --timeline-step-3: #00bf9a;
+  --timeline-step-4: #ff8d72;
+  --timeline-step-5: #11cdef;
+
+  /* Loader gradient */
+  --loader-from: #306cce;
+  --loader-to: #72a1ed;
+
+  /* Heading gradient (main-heading, numbers) */
+  --heading-gradient-from: #808080;
+  --heading-gradient-to: #000000;
+  --numbers-gradient-from: #ffffff;
+  --numbers-gradient-to: #c2c2c2;
+
+  /* Animated underline (heading) */
+  --underline-accent: #5677e0;
+
+  /* Shadow tint for primary */
+  --shadow-primary: rgba(75, 94, 219, 0.3);
+}
