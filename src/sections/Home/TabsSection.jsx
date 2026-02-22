@@ -56,7 +56,7 @@ const TabsSection = () => {
                 className={`p-2 rounded-xl transition-all duration-300 cursor-pointer ${
                   isActive 
                   ? "blue-bg text-white shadow-lg scale-110" 
-                  : "text-slate-400 hover:text-blue-600 hover:bg-white"
+                  : "text-slate-400 hover-primary-text hover:bg-white"
                 }`}
               >
                 {feature.icon}

@@ -68,7 +68,7 @@ const ContactPage = () => {
                       href={item.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#4B5EDB] to-[#7FAAF2] text-white shadow-md hover:scale-105 transition-transform"
+                      className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg gradient-bg-br text-white shadow-md hover:scale-105 transition-transform"
                     >
                       <i className={`bi ${item.icon} text-2xl`}></i>
                     </a>
@@ -106,7 +106,7 @@ const ContactPage = () => {
                     name="name"
                     placeholder="Your name"
                     required
-                    className="w-full rounded-md border bg-white border-gray-400 py-2 px-4 shadow-sm focus:outline-blue-900"
+                    className="w-full rounded-md border bg-white border-gray-400 py-2 px-4 shadow-sm border-focus focus:outline-2 focus:outline-offset-0 focus:outline-[var(--border-focus)]"
                   />
                   <input
                     type="tel"
@@ -114,13 +114,13 @@ const ContactPage = () => {
                     placeholder="Phone number"
                     pattern="[0-9]{10}"
                     required
-                    className="w-full rounded-md border bg-white border-gray-400 py-2 px-4 shadow-sm focus:outline-blue-900"
+                    className="w-full rounded-md border bg-white border-gray-400 py-2 px-4 shadow-sm border-focus focus:outline-2 focus:outline-offset-0 focus:outline-[var(--border-focus)]"
                   />
                   <textarea
                     name="textarea"
                     rows="5"
                     placeholder="Explain your project... (optional)"
-                    className="w-full rounded-md border bg-white border-gray-400 py-2 px-4 shadow-sm resize-none focus:outline-blue-900"
+                    className="w-full rounded-md border bg-white border-gray-400 py-2 px-4 shadow-sm resize-none border-focus focus:outline-2 focus:outline-offset-0 focus:outline-[var(--border-focus)]"
                   ></textarea>
                 </div>
                 <div className="text-center">
@@ -136,7 +136,7 @@ const ContactPage = () => {
       <div className="overflow-hidden bg-white rounded-md mt-16 shadow-xl border border-gray-100">
         <div className="text-gray-800 p-5">
           <p className="font-medium new-font flex items-center gap-2">
-            <i className="bi bi-geo-alt-fill text-blue-800"></i>Nagad Computer
+            <i className="bi bi-geo-alt-fill primary-text"></i>Nagad Computer
             Wholesalers
           </p>
           <p className="text-sm opacity-75">

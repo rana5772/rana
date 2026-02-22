@@ -5,7 +5,7 @@ const BLOG_POSTS = [
   {
     id: 1,
     category: "Technology",
-    categoryColor: "bg-blue-500",
+    categoryColor: "primary-bg",
     title: "The Future of Web Development in 2026",
     excerpt:
       "Explore the emerging trends and technologies that are shaping the future of web development this year.",

@@ -53,7 +53,7 @@ const FAQsPage = () => {
                 <span className="font-medium text-[18px] text-gray-800">
                   {item.question}
                 </span>
-                <span className="text-2xl bg-gradient-to-r from-[#7FAAF2] to-[#4B5EDB] bg-clip-text text-transparent">
+                <span className="text-2xl gradient-text">
                   {activeIndex === index ? "−" : "+"}
                 </span>
               </button>

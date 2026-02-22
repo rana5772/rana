@@ -60,7 +60,7 @@ const TechStackSection = () => {
         <div className="flex items-center gap-4 text-4xl">
           <SiMongodb className="text-emerald-500" />
           <SiExpress />
-          <SiReact className="text-blue-400" />
+          <SiReact className="primary-text-muted" />
           <SiNodedotjs className="text-green-600" />
         </div>
       </div>

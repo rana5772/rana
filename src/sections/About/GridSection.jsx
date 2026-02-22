@@ -18,9 +18,9 @@ const services = [
   {
     title: "Project Audit",
     description: "A Project Audit is a formal review of a project, which is intended to assess the extent up to which project management standards are being upheld.",
-    color: "bg-blue-400",
-    borderColor: "border-blue-400",
-    textColor: "text-blue-400"
+    color: "primary-bg",
+    borderColor: "border-primary",
+    textColor: "primary-text"
   },
   {
     title: "Hacking / RE",

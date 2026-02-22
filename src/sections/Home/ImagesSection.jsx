@@ -69,7 +69,7 @@ const ImagesSection = () => {
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 w-full items-center">
               <Link
                 to="/faqs"
-                className="w-full sm:w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 bg-gradient-to-r from-[#7FAAF2] to-[#4B5EDB] text-white transition-all shadow-lg"
+                className="w-full sm:w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
               >
                 Know More <FaArrowRight />
               </Link>

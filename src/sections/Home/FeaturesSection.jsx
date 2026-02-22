@@ -76,10 +76,10 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white/75 hover:bg-white backdrop-blur-2xl p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:border-blue-500"
+              className="group bg-white/75 hover:bg-white backdrop-blur-2xl p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:shadow-xl hover-border-primary"
             >
               {/* Icon Container */}
-              <div className="blue-bg p-3 rounded-md mb-6 flex items-center justify-center transition-colors duration-300 group-hover:bg-blue-600">
+              <div className="blue-bg group-hover-primary-bg p-3 rounded-md mb-6 flex items-center justify-center transition-colors duration-300">
                 <feature.icon
                   className="w-6 h-6 text-white"
                   strokeWidth={2.5}
@@ -87,10 +87,10 @@ const FeaturesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-[#0F172A] new-font text-xl font-semibold mb-3">
+              <h3 className="text-heading new-font text-xl font-semibold mb-3">
                 {feature.title}
               </h3>
-              <p className="text-[#64748B] leading-relaxed">
+              <p className="text-body leading-relaxed">
                 {feature.description}
               </p>
             </div>

@@ -32,7 +32,7 @@
 
 .main-heading {
   font-family: "Bricolage Grotesque", sans-serif;
-  background: linear-gradient(to bottom, #808080, #000000);
+  background: linear-gradient(to bottom, var(--heading-gradient-from), var(--heading-gradient-to));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -63,7 +63,7 @@
 
 .numbers {
   font-family: "Bricolage Grotesque", sans-serif;
-  background: linear-gradient(to bottom, #ffffff, #c2c2c2);
+  background: linear-gradient(to bottom, var(--numbers-gradient-from), var(--numbers-gradient-to));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

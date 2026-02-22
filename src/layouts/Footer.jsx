@@ -56,7 +56,7 @@ function Footer() {
                     <NavLink
                       to={link.path}
                       end={link.end}
-                      className="inline-block text-gray-800 transition-all duration-200 hover:translate-x-2 hover:text-blue-600"
+                      className="inline-block link-primary transition-all duration-200 hover:translate-x-2"
                     >
                       → {link.name}
                     </NavLink>

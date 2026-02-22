@@ -8,7 +8,7 @@ const ProfileCard = () => {
         
         {/* Profile Icon - Fixed to the Left */}
         <div className="absolute top-0 left-8 -translate-y-1/2">
-          <div className="w-24 h-24 rounded-full border-2 border-blue-500 overflow-hidden bg-white">
+          <div className="w-24 h-24 rounded-full border-2 border-primary overflow-hidden bg-white">
             <img
               src="/images/profile.png"
               alt="profile"

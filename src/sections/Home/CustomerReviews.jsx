@@ -140,7 +140,7 @@ export default function CustomerReviews() {
               onClick={() => setActiveIndex(index)}
             >
               {/* Profile Image */}
-              <div className="aspect-square h-[90px] rounded-full border-2 border-blue-50 overflow-hidden mb-4">
+              <div className="aspect-square h-[90px] rounded-full border-2 border-slate-100 overflow-hidden mb-4">
                 <img
                   src={item.avatar}
                   alt={item.name}
@@ -178,13 +178,13 @@ export default function CustomerReviews() {
         {/* Desktop Navigation */}
         <button
           onClick={prevSlide}
-          className="hidden md:flex absolute -left-12 z-40 p-3 bg-white shadow-lg rounded-full text-slate-400 hover:text-blue-600 transition"
+          className="hidden md:flex absolute -left-12 z-40 p-3 bg-white shadow-lg rounded-full text-slate-400 hover-primary-text transition"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={nextSlide}
-          className="hidden md:flex absolute -right-12 z-40 p-3 bg-white shadow-lg rounded-full text-slate-400 hover:text-blue-600 transition"
+          className="hidden md:flex absolute -right-12 z-40 p-3 bg-white shadow-lg rounded-full text-slate-400 hover-primary-text transition"
         >
           <ChevronRight size={24} />
         </button>

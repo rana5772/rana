@@ -4,7 +4,7 @@ import Heading from "../../components/Heading";
 const CodeSection = () => {
   const [copied, setCopied] = useState(false);
 
-  const codeString = `<div className="flex justify-center items-center bg-blue-500 text-white p-4">
+  const codeString = `<div className="flex justify-center items-center primary-bg text-white p-4">
    <h1 className="text-2xl">Hello, World!</h1>
    <a>Hello Reactjs</a>
 </div>`;
@@ -59,7 +59,7 @@ const CodeSection = () => {
               <span className="text-[#953800]">className</span>=
               {/* Strings: Vibrant Blue */}
               <span className="text-[#0550ae]">
-                "flex justify-center items-center bg-blue-500 text-white p-4"
+                "flex justify-center items-center primary-bg text-white p-4"
               </span>
               <span className="text-[#57606a]">&gt;</span>
               {"\n   "}

@@ -71,7 +71,7 @@ function LaptopSection() {
             <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-5 w-full items-center">
               <Link
                 to="/projects"
-                className="w-full sm:w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 bg-gradient-to-r from-[#7FAAF2] to-[#4B5EDB] text-white transition-all shadow-lg"
+                className="w-full sm:w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
               >
                 View Projects <FaArrowRight />
               </Link>
@@ -105,7 +105,7 @@ function LaptopSection() {
               />
               <div
                 id="slide"
-                className="absolute select-none inset-0 flex flex-col items-center justify-evenly pb-3 text-center overflow-hidden text-xl text-blue-800 bg-white transition-opacity duration-1000 ease-in-out"
+                className="absolute select-none inset-0 flex flex-col items-center justify-evenly pb-3 text-center overflow-hidden text-xl primary-text bg-white transition-opacity duration-1000 ease-in-out"
               >
                 <h3 className="sm:text-4xl text-2xl new-font blue-text">
                   {slides[currentSlide].title}

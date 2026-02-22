@@ -34,7 +34,7 @@ const FeatureSection = ({
               {features.map((feature, index) => (
                 <li
                   key={index}
-                  className="relative pl-7 before:content-['✓'] before:absolute before:left-0 before:text-blue-600 before:font-bold"
+                  className="relative pl-7 before:content-['✓'] before:absolute before:left-0 before:[color:var(--primary-text)] before:font-bold"
                 >
                   {feature}
                 </li>

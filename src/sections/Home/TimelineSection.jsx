@@ -9,7 +9,7 @@ const timelineData = [
     title: "PLANNING",
     content:
       "The first step involves defining the project's goals, target audience, and site map. We conduct thorough research and gather all necessary requirements to create a solid roadmap.",
-    color: "bg-[#1d8cf8]",
+    color: "timeline-step-1",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const timelineData = [
     title: "DESIGN",
     content:
       "In this phase, we focus on the visual layout and user experience. We create wireframes and high-fidelity mockups to ensure the design is both aesthetic and functional.",
-    color: "bg-[#fd5d93]",
+    color: "timeline-step-2",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const timelineData = [
     title: "LAUNCH",
     content:
       "After rigorous testing and quality assurance, we deploy the website to the live server. We ensure everything is perfectly configured for a smooth user experience.",
-    color: "bg-[#00bf9a]",
+    color: "timeline-step-3",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const timelineData = [
     title: "SEO",
     content:
       "Post-launch, we optimize the site for search engines. This includes on-page SEO, speed optimization, and meta tag adjustments to improve visibility and ranking.",
-    color: "bg-[#ff8d72]",
+    color: "timeline-step-4",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const timelineData = [
     title: "MAINTENANCE",
     content:
       "We provide ongoing support and updates to keep the website secure and up-to-date. Regular backups and performance monitoring are part of our maintenance package.",
-    color: "bg-[#11cdef]",
+    color: "timeline-step-5",
   },
 ];
 

@@ -9,7 +9,7 @@
   bottom: 0; 
   width: 0;
   height: 5px; 
-  background-color: #5677e0;
+  background-color: var(--underline-accent);
   transition: width 0.8s ease-out;
   animation: drawUnderline 1s forwards;
   animation-delay: 0.1s;
