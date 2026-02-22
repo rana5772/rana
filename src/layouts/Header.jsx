@@ -42,7 +42,7 @@ const Header = () => {
           </NavLink>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-5">
+          <ul className="hidden md:flex gap-8">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink

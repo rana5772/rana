@@ -53,7 +53,7 @@ const ServiceCard = ({ title, description, color, borderColor, textColor }) => (
 
 const GridSection = () => {
   return (
-    <div className="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
+    <div className="container relative flex flex-col justify-between h-full px-10 mx-auto xl:px-0 mt-5">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-5 w-full">
         
         {/* First 2 items: each span 3 columns (half width) */}

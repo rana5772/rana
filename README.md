@@ -1,7 +1,9 @@
 features :-
 chatbot
 ai blogs
-sitemap
 react helmet
 google analytics
 pricing model
+effectiveness score
+<!-- about page -->
+<!-- written content -->

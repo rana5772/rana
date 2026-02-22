@@ -3,6 +3,8 @@ import Heading from "../components/Heading";
 import GridSection from "../sections/About/GridSection";
 import CodeSection from "../sections/About/CodeSection";
 import ServicesSection from "../sections/About/ServicesSection";
+import ProfileCard from "../sections/About/ProfileCard";
+import ParallaxSection from "../sections/About/ParallaxSection";
 
 const About = () => {
   return (
@@ -20,7 +22,9 @@ const About = () => {
 
       {/* <CodeSection /> */}
 
-      {/* <ServicesSection /> */}
+      <ProfileCard />
+
+      <div className="my-40"></div>
     </div>
   );
 };

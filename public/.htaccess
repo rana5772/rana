@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Rule 1: If the request is for an actual file or directory that exists, serve it.
+  # (This allows your CSS, JS, and Images to load normally)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Rule 2: If the file doesn't exist, send the request to index.html.
+  # This allows React Router to take over.
+  RewriteRule ^ index.html [L]
+</IfModule>

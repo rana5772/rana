@@ -68,7 +68,7 @@ const FAQsPage = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="p-5 text-justify bg-white/50 text-gray-600 leading-relaxed">
+                    <div className="p-5 bg-white/50 text-gray-600 leading-relaxed">
                       {item.answer}
                     </div>
                   </motion.div>
