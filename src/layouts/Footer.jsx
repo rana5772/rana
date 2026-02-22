@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 const logo = "/images/logo.png";
+import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
 function Footer() {
   const navLinks = [
@@ -15,6 +16,13 @@ function Footer() {
   return (
     <footer className="">
       <hr className="w-4/5 mx-auto mt-12 border-gray-800" />
+      <button
+        className="group border hover:bg-white mx-auto block border-t-0 p-3 rounded-b-md transition-all"
+        onClick={() => window.scrollTo({ top: 0 })}
+      >
+        Scroll to Top
+        <MdKeyboardDoubleArrowUp className="inline-block ml-1 text-xl transition-transform duration-300 -translate-y-0.5 group-hover:-translate-y-2" />
+      </button>
 
       <div className="py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">

@@ -42,18 +42,18 @@ const TabsSection = () => {
       </p>
       <GlassBox text="Design → Development → AI Integration" />
 
-      {/* Main Container - Joined Layout */}
-      <div className="flex max-w-6xl mx-auto items-stretch rounded-xl overflow-hidden border border-slate-100 shadow-sm">
+      {/* Main Container - Added flex-col for mobile */}
+      <div className="flex flex-col md:flex-row max-w-6xl mx-auto items-stretch rounded-xl overflow-hidden border border-slate-100 shadow-sm">
         
-        {/* Sidebar - Light colored to match the card */}
-        <div className="w-20 bg-slate-50/50 border-r border-slate-100 flex flex-col items-center py-8 gap-4">
+        {/* Sidebar - Changed w-16 to md:w-16, added horizontal flex for mobile */}
+        <div className="w-full md:w-16 bg-slate-50/50 border-b md:border-b-0 md:border-r border-slate-100 flex flex-row md:flex-col items-start md:items-center p-4 md:py-8 gap-4">
           {features.map((feature, index) => {
             const isActive = activeTab === index;
             return (
               <button
                 key={feature.id}
                 onClick={() => setActiveTab(index)}
-                className={`p-3 rounded-xl transition-all duration-300 cursor-pointer ${
+                className={`p-2 rounded-xl transition-all duration-300 cursor-pointer ${
                   isActive 
                   ? "blue-bg text-white shadow-lg scale-110" 
                   : "text-slate-400 hover:text-blue-600 hover:bg-white"
@@ -81,7 +81,6 @@ const TabsSection = () => {
               align="left"
             />
 
-            {/* Subtle Divider Line from the reference image */}
             <div className="w-full h-px bg-slate-300 mb-3" />
 
             <p className="text-slate-500 text-base leading-relaxed mb-5 max-w-prose">

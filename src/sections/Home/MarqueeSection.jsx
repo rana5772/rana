@@ -28,9 +28,6 @@ const MarqueeSection = () => {
           width: max-content;
           animation: marquee 40s linear infinite;
         }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
       `}</style>
 
       <div className="relative flex items-center">
