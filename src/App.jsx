@@ -4,7 +4,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 // 1. Import AOS library and styles
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./pages/pages.css"
+import "./pages/pages.css";
 
 // Sound asset
 import transitionSound from "./assets/sound.mp3";
@@ -34,6 +34,7 @@ function App() {
   useEffect(() => {
     AOS.init({
       duration: 500,
+      offset: 200,
     });
     AOS.refresh();
     window.scrollTo(0, 0);
@@ -62,8 +63,8 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/blogs" element={<BlogsPage />} />
-            <Route path="/contact" element={<ContactPage />} /> // 
-            <Route path="/faqs" element={<FAQsPage />} /> // 
+            <Route path="/contact" element={<ContactPage />} /> //
+            <Route path="/faqs" element={<FAQsPage />} /> //
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

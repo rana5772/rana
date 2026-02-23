@@ -5,5 +5,8 @@ react helmet
 google analytics
 pricing model
 effectiveness score
+dark mode
 <!-- about page -->
-<!-- written content -->
+<!-- popup to know more -->
+written content
+

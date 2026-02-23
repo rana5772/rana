@@ -20,3 +20,42 @@
     width: 100%;
   }
 }
+
+/* ServiceCard.css */
+
+.skeleton-container {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #e5e7eb; /* gray-200 */
+  overflow: hidden;
+}
+
+.skeleton-slant {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: slide-slant 1.5s infinite linear;
+}
+
+@keyframes slide-slant {
+  0% {
+    transform: translateX(-150%) skewX(-45deg);
+  }
+  100% {
+    transform: translateX(150%) skewX(-45deg);
+  }
+}
+
+/* Custom Typography Classes */
+.main-heading.new-font {
+  letter-spacing: -0.02em;
+}

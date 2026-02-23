@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import motion
 
 const ProfileCard = () => {
   return (
@@ -6,26 +7,38 @@ const ProfileCard = () => {
       {/* Main Card Container */}
       <div className="relative w-full max-w-4xl bg-white/60 backdrop-blur-md rounded-tr-3xl rounded-bl-3xl px-8 pb-10 pt-16 shadow-xl">
         
-        {/* Profile Icon - Fixed to the Left */}
-        <div className="absolute top-0 left-8 -translate-y-1/2">
-          <div className="w-24 h-24 rounded-full border-2 border-primary overflow-hidden bg-white">
+        {/* Profile Icon - Animated with Framer Motion */}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 260, 
+            damping: 20, 
+            delay: 0.2 
+          }}
+          className="absolute top-0 left-8 -translate-y-1/2"
+        >
+          <div className="w-24 h-24 rounded-full border-2 border-primary overflow-hidden bg-white shadow-lg">
             <img
               src="/images/profile.png"
               alt="profile"
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Content */}
-        {/* Changed text-center to text-left */}
+        {/* Content - Static */}
         <h2 className="text-2xl text-left font-semibold text-gray-900 tracking-wide new-font mb-4">
           Message from the Founder
         </h2>
 
         <p className="text-gray-500 leading-relaxed">
           <span className="blue-text underline">
-            <a href="https://rana.net.in">rana.net.in</a>
+            <a href="https://rana.net.in" target="_blank" rel="noreferrer">
+              rana.net.in
+            </a>
           </span>{" "}
           was founded on a clear mission: ensuring technology is a catalyst for
           startups, not a hurdle.
@@ -39,7 +52,11 @@ const ProfileCard = () => {
 
         <div className="mt-5 new-font text-right">
           <p>- Vaibhav Rana</p>
-          <p className="blue-text text-[15px]">Founder, rana.net.in</p>
+          <p className="blue-text underline text-[15px]">
+            <a href="https://rana.net.in" target="_blank" rel="noreferrer">
+              rana.net.in
+            </a>
+          </p>
         </div>
       </div>
     </div>

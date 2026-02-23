@@ -31,9 +31,8 @@ const FAQsPage = () => {
         <GlassBox text="More than an agency — your lifelong tech partnership." />
 
         <p className="text-center">
-          We are more than just a service provider; we are your dedicated,
-          long-term partner committed to supporting your technology needs and
-          helping your business grow every step of the way.
+          Have a question? We've gathered the most common inquiries here to help
+          you get the answers you need, fast. Everything you need to know.
         </p>
 
         <div className="mt-10 space-y-4">
