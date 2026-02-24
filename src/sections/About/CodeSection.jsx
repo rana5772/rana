@@ -11,7 +11,10 @@ const CodeSection = () => {
   const textRef = useRef(null);
 
   useLayoutEffect(() => {
-    // Logic for the animation
+    // Always scroll to top when About page mounts
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    // Logic for GSAP animation
     const text = new SplitType(textRef.current, { types: "chars" });
 
     gsap.from(text.chars, {

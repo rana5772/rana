@@ -177,10 +177,6 @@ footer a.active {
   color: var(--primary);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 button,
 a {
   cursor: pointer;

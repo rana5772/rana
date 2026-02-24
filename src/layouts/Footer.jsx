@@ -18,7 +18,7 @@ function Footer() {
       <hr className="w-4/5 mx-auto mt-12 border-gray-800" />
       <button
         className="group border hover:bg-white mx-auto block border-t-0 p-3 rounded-b-md transition-all"
-        onClick={() => window.scrollTo({ top: 0 })}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         Scroll to Top
         <MdKeyboardDoubleArrowUp className="inline-block ml-1 text-xl transition-transform duration-300 -translate-y-0.5 group-hover:-translate-y-2" />
