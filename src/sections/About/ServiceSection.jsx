@@ -9,9 +9,10 @@ const ServiceSection = () => {
         title="Website Development"
         image="/images/photos/1.png"
         imagePosition="left"
+        mt={false}
         tags={[
           { label: "Corporate Website", color: "bg-blue-300" },
-          { label: "E-commerce Store", color: "bg-emerald-300" },
+          { label: "E-commerce", color: "bg-emerald-300" },
           { label: "SaaS Platforms", color: "bg-purple-300" },
           { label: "Portfolio Site", color: "bg-pink-300" },
           { label: "Landing Pages", color: "bg-yellow-300" },
@@ -99,9 +100,8 @@ const ServiceSection = () => {
           { label: "Logo Design", color: "bg-pink-300" },
           { label: "Brand Identity", color: "bg-purple-300" },
           { label: "Social Media Kits", color: "bg-blue-300" },
-          { label: "Business Stationery", color: "bg-yellow-300" },
           { label: "UI/UX Prototyping", color: "bg-cyan-300" },
-          { label: "Marketing Collateral", color: "bg-orange-300" },
+          { label: "Marketing Collateral", color: "bg-yellow-300" },
         ]}
         description="A brand is more than just a logo—it's an emotion and a promise. At rana.net.in, we help businesses in Delhi and Pune find their unique voice through strategic visual storytelling. Our design philosophy blends aesthetics with psychology to create identities that resonate.<br/><br/>Whether you are a startup looking for your first logo or an established brand seeking a modern refresh, our creative team delivers high-impact visuals. We ensure your brand looks consistent and professional across every touchpoint, from Instagram to your office stationery."
         features={[

@@ -7,6 +7,7 @@ import ParallaxSection from "../sections/About/ParallaxSection";
 import GlassBox from "../components/GlassBox";
 import ServiceCard from "../sections/About/ServiceCard";
 import ServiceSection from "../sections/About/ServiceSection";
+import Typing from "../sections/About/Typing";
 
 const About = () => {
   return (
@@ -30,13 +31,24 @@ const About = () => {
 
       <ProfileCard />
 
+      <div className="text-center pt-8 new-font bg-black/0 rounded-full shadow-xl border border-black/20">
+        <h1 className="animated-header text-center font-architects-daughter">
+          <span className="md:text-3xl text-2xl font-medium text-gray-700">
+            Empowering your <span className="underline ">online presence</span>{" "}
+            with
+          </span>
+        </h1>
+        <div className="mt-2 main-heading text-gray-800 font- new-font mb-8">
+          <div className="md:text-4xl flex justify-center items-center text-center text-3xl">
+            <Typing />
+          </div>
+        </div>
+      </div>
+
       <ServiceSection />
 
-      {/* <GridSection /> */}
-
       <CodeSection />
-
-      <div className="my-40"></div>
+      {/* <GridSection /> */}
     </div>
   );
 };

@@ -17,6 +17,7 @@
     "bootstrap-icons": "^1.13.1",
     "flyonui": "^2.4.1",
     "framer-motion": "^12.33.0",
+    "gsap": "^3.14.2",
     "lucide-react": "^0.563.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -28,6 +29,7 @@
     "react-router-sitemap": "^1.2.0",
     "react-type-animation": "^3.2.0",
     "react-typing-effect": "^2.0.5",
+    "split-type": "^0.3.4",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

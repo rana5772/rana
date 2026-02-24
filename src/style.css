@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  /* border: 1px solid crimson; */
 }
 
 @theme {
@@ -41,7 +42,11 @@
   }
 
   .blue-text {
-    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+    background: linear-gradient(
+      to bottom,
+      var(--gradient-start),
+      var(--gradient-end)
+    );
     font-weight: 600;
     -webkit-background-clip: text;
     background-clip: text;
@@ -49,7 +54,11 @@
   }
 
   .blue-bg {
-    background: linear-gradient(to right, var(--gradient-end), var(--gradient-start));
+    background: linear-gradient(
+      to right,
+      var(--gradient-end),
+      var(--gradient-start)
+    );
   }
 
   .primary-bg {
@@ -61,11 +70,19 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(to right, var(--gradient-end), var(--gradient-start));
+    background: linear-gradient(
+      to right,
+      var(--gradient-end),
+      var(--gradient-start)
+    );
   }
 
   .gradient-bg-br {
-    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+    background: linear-gradient(
+      to bottom right,
+      var(--gradient-start),
+      var(--gradient-end)
+    );
   }
 
   .link-primary {
@@ -93,7 +110,11 @@
   }
 
   .gradient-text {
-    background: linear-gradient(to right, var(--gradient-end), var(--gradient-start));
+    background: linear-gradient(
+      to right,
+      var(--gradient-end),
+      var(--gradient-start)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -104,14 +125,28 @@
   }
 
   .before-gradient-bg::before {
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    background: linear-gradient(
+      to right,
+      var(--gradient-start),
+      var(--gradient-end)
+    );
   }
 
-  .timeline-step-1 { background-color: var(--timeline-step-1); }
-  .timeline-step-2 { background-color: var(--timeline-step-2); }
-  .timeline-step-3 { background-color: var(--timeline-step-3); }
-  .timeline-step-4 { background-color: var(--timeline-step-4); }
-  .timeline-step-5 { background-color: var(--timeline-step-5); }
+  .timeline-step-1 {
+    background-color: var(--timeline-step-1);
+  }
+  .timeline-step-2 {
+    background-color: var(--timeline-step-2);
+  }
+  .timeline-step-3 {
+    background-color: var(--timeline-step-3);
+  }
+  .timeline-step-4 {
+    background-color: var(--timeline-step-4);
+  }
+  .timeline-step-5 {
+    background-color: var(--timeline-step-5);
+  }
 }
 
 .new-font {

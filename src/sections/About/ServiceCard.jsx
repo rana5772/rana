@@ -36,7 +36,7 @@ const ServiceCard = ({
         className={`w-full bg-white/65 rounded-t-2xl overflow-hidden flex flex-col ${layoutClass}`}
       >
         <div
-          data-aos="zoom-in"
+          data-aos="flip-down"
           className="relative h-72 md:w-1/3 md:h-auto md:min-h-[250px] m-4 rounded-2xl flex-shrink-0 overflow-hidden bg-gray-200"
         >
           {!isLoaded && (
