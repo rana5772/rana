@@ -31,7 +31,7 @@ const ServiceCard = ({
     imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row";
 
   return (
-    <div className="shadow-md mt-20 overflow-hidden rounded-2xl">
+    <div className="shadow-md overflow-hidden rounded-2xl">
       <div
         className={`w-full bg-white/65 rounded-t-2xl overflow-hidden flex flex-col ${layoutClass}`}
       >

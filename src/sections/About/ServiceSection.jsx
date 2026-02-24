@@ -3,7 +3,7 @@ import ServiceCard from "./ServiceCard";
 
 const ServiceSection = () => {
   return (
-    <div className="py-16 px-4 max-w-7xl mx-auto space-y-20">
+    <div className="mb-16 px-4 max-w-7xl mx-auto space-y-20">
       {/* 1. Website Development */}
       <ServiceCard
         title="Website Development"

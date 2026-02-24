@@ -31,7 +31,7 @@ const About = () => {
 
       <ProfileCard />
 
-      <div className="text-center pt-8 new-font bg-black/0 rounded-full shadow-xl border border-black/20">
+      <div className="text-center pt-8 mb-18 new-font bg-black/0 rounded-full shadow-xl border border-black/20">
         <h1 className="animated-header text-center font-architects-daughter">
           <span className="md:text-3xl text-2xl font-medium text-gray-700">
             Empowering your <span className="underline ">online presence</span>{" "}
