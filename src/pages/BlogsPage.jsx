@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Heading from "../components/Heading";
 
 const BLOG_POSTS = [
@@ -73,6 +74,15 @@ const BLOG_POSTS = [
 const BlogsPage = () => {
   return (
     <>
+      <Helmet>
+        <title>Blogs | rana.net.in</title>
+        <meta
+          name="description"
+          content="Read insights, tips, and articles from rana.net.in on web development, design, business growth, and more."
+        />
+        <link rel="canonical" href="https://rana.net.in/blogs" />
+      </Helmet>
+
       <Heading heading="Read our Blogs" />
 
       {/* <div className="flex justify-center">

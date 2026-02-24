@@ -5,8 +5,6 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./pages/pages.css";
-
-// Sound asset
 import transitionSound from "./assets/sound.mp3";
 
 // Layout components
@@ -32,24 +30,54 @@ function App() {
   }, []);
 
   useEffect(() => {
+    // Re-initialize animations on route change
     AOS.init({
       duration: 500,
       offset: 200,
     });
     AOS.refresh();
+
     window.scrollTo(0, 0);
+
+    // Keep document title in sync with current route
+    const { pathname } = location;
+    let title = "rana.net.in";
+
+    switch (pathname) {
+      case "/":
+        title = "rana.net.in - Web & App dev services";
+        break;
+      case "/about":
+        title = "About Us | rana.net.in";
+        break;
+      case "/projects":
+        title = "Projects | rana.net.in";
+        break;
+      case "/pricing":
+        title = "Pricing | rana.net.in";
+        break;
+      case "/blogs":
+        title = "Blogs | rana.net.in";
+        break;
+      case "/contact":
+        title = "Contact Us | rana.net.in";
+        break;
+      case "/faqs":
+        title = "FAQs | rana.net.in";
+        break;
+      default:
+        title = "rana.net.in";
+        break;
+    }
+
+    document.title = title;
+
+    // Play transition sound on route change
     audio.currentTime = 0;
-    audio.play().catch(() => {});
-    const titles = {
-      "/": "rana.net.in - Web & App dev services",
-      "/about": "About our Services - rana.net.in",
-      "/projects": "Previous Projects - rana.net.in",
-      "/pricing": "Our Pricing Model - rana.net.in",
-      "/blogs": "Read our Blogs - rana.net.in",
-      "/contact": "Get in Touch - rana.net.in",
-      "/faqs": "Frequently Asked Questions rana.net.in",
-    };
-    document.title = titles[location.pathname] || "rana.net.in";
+    audio.play().catch(() => {
+      // Browsers often block autoplay until user interaction
+      console.log("Audio playback delayed until user interaction.");
+    });
   }, [location, audio]);
 
   return (
@@ -63,13 +91,12 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/blogs" element={<BlogsPage />} />
-            <Route path="/contact" element={<ContactPage />} /> //
-            <Route path="/faqs" element={<FAQsPage />} /> //
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/faqs" element={<FAQsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </main>
-
       <Footer />
     </div>
   );

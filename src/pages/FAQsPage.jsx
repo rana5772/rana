@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import Heading from "../components/Heading";
 import QnA from "@/assets/QnA.json";
@@ -16,6 +17,15 @@ const FAQsPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>FAQs | rana.net.in</title>
+        <meta
+          name="description"
+          content="Find answers to frequently asked questions about web and app development services from rana.net.in."
+        />
+        <link rel="canonical" href="https://rana.net.in/faqs" />
+      </Helmet>
+
       <div className="max-w-5xl mx-auto px-4 pb-16">
         <Heading
           heading={
