@@ -19,6 +19,7 @@ import FAQsPage from "./pages/FAQsPage";
 import PricingPage from "./pages/PricingPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
+import ChatBot from "./layouts/ChatBot";
 
 function App() {
   const location = useLocation();
@@ -83,6 +84,7 @@ function App() {
   return (
     <div>
       <Header />
+      <ChatBot />
       <main className="min-h-screen">
         <div className="max-w-screen-xl px-4 pt-10 md:pt-16 mx-auto">
           <Routes>

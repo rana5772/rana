@@ -1,4 +1,3 @@
-chatbot
 ai blogs
 react helmet
 google analytics
