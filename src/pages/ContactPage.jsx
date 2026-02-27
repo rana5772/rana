@@ -60,7 +60,7 @@ const ContactPage = () => {
 
         <GlassBox text="Feel free to connect" />
 
-        <section className="md:mt-10 dark:bg-slate-800" id="contact">
+        <section className="md:mt-10 " id="contact">
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-10 items-start justify-center">
               {/* Info Column */}
@@ -70,7 +70,7 @@ const ContactPage = () => {
                   a project, or just want to say hello, our team is ready to
                   chat.
                 </p>
-                <h2 className="text-2xl font-semibold new-font mb-6 text-gray-900 dark:text-white">
+                <h2 className="text-2xl font-semibold new-font mb-6 text-gray-900 ">
                   Connect with us :-
                 </h2>
                 <ul className="space-y-6">
@@ -85,14 +85,14 @@ const ContactPage = () => {
                         <i className={`bi ${item.icon} text-2xl`}></i>
                       </a>
                       <div className="ml-4">
-                        <h3 className="text-lg font-medium new-font leading-6 text-gray-900 dark:text-white">
+                        <h3 className="text-lg font-medium new-font leading-6 text-gray-900 ">
                           {item.title}
                         </h3>
                         <a
                           href={item.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-gray-800 underline dark:text-slate-400"
+                          className="text-gray-800 underline "
                         >
                           {item.value}
                         </a>
@@ -108,7 +108,7 @@ const ContactPage = () => {
                 className="card border border-gray-300 rounded-md bg-white/70 h-fit p-5 md:p-12 shadow-lg"
                 id="form"
               >
-                <h2 className="mb-4 text-2xl font-semibold new-font dark:text-white">
+                <h2 className="mb-4 text-2xl font-semibold new-font ">
                   Ready to Get Started?
                 </h2>
                 <form onSubmit={handleSubmit}>
