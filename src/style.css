@@ -71,7 +71,7 @@
 
   .gradient-bg {
     background: linear-gradient(
-      to right,
+      -45deg,
       var(--gradient-end),
       var(--gradient-start)
     );
