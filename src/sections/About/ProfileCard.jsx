@@ -6,17 +6,16 @@ const ProfileCard = () => {
     <div className="flex items-center mb-10 mt-20 justify-center">
       {/* Main Card Container */}
       <div className="relative w-full max-w-4xl bg-white/60 backdrop-blur-md rounded-tr-3xl rounded-bl-3xl px-8 pb-10 pt-16 shadow-xl">
-        
         {/* Profile Icon - Animated with Framer Motion */}
-        <motion.div 
+        <motion.div
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: false }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 260, 
-            damping: 20, 
-            delay: 0.2 
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.2,
           }}
           className="absolute top-0 left-8 -translate-y-1/2"
         >
