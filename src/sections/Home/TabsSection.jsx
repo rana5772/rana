@@ -69,7 +69,7 @@ const TabsSection = () => {
         <div className="flex-1 bg-white p-8 md:p-12 relative">
           <div key={activeTab} className="animate-in fade-in slide-in-from-right-4 duration-500">
             <div className="flex items-center gap-2 mb-3">
-              <span className="blue-text text-xs font-semibold uppercase tracking-wider">
+              <span className="text-gradient text-xs font-semibold uppercase tracking-wider">
                 {features[activeTab].feature}
               </span>
             </div>

@@ -35,7 +35,7 @@ const ProfileCard = () => {
         </h2>
 
         <p className="text-gray-500 leading-relaxed">
-          <span className="blue-text underline">
+          <span className="text-gradient underline">
             <a href="https://rana.net.in" target="_blank" rel="noreferrer">
               rana.net.in
             </a>
@@ -52,7 +52,7 @@ const ProfileCard = () => {
 
         <div className="mt-5 new-font text-right">
           <p>- Vaibhav Rana</p>
-          <p className="blue-text underline text-[15px]">
+          <p className="text-gradient underline text-[15px]">
             <a href="https://rana.net.in" target="_blank" rel="noreferrer">
               rana.net.in
             </a>

@@ -107,13 +107,13 @@ function LaptopSection() {
                 id="slide"
                 className="absolute select-none inset-0 flex flex-col items-center justify-evenly pb-3 text-center overflow-hidden text-xl primary-text bg-white transition-opacity duration-1000 ease-in-out"
               >
-                <h3 className="sm:text-4xl text-2xl new-font blue-text">
+                <h3 className="sm:text-4xl text-2xl new-font text-gradient">
                   {slides[currentSlide].title}
                 </h3>
                 <i
-                  className={`bi blue-text ${slides[currentSlide].icon} text-5xl sm:text-6xl`}
+                  className={`bi text-gradient ${slides[currentSlide].icon} text-5xl sm:text-6xl`}
                 ></i>
-                <div className="sm:text-xl text-[15px] new-font blue-text font-[450]">
+                <div className="sm:text-xl text-[15px] new-font text-gradient font-[450]">
                   {slides[currentSlide].text}
                 </div>
               </div>

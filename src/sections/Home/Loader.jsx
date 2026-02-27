@@ -18,7 +18,7 @@ const Loader = () => {
         />
 
         {/* Loading Text */}
-        <p className="blue-text font-thin new-font text-3xl">
+        <p className="text-gradient font-thin new-font text-3xl">
             rana.net.in
         </p>
         
