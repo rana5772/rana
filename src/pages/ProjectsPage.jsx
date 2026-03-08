@@ -2,6 +2,14 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Heading from "../components/Heading";
 
+// https://hsjnfiwisdom.com
+// https://dainmart.com
+// https://upfound.ai
+// https://ecommercetank.in
+// https://optivue.in
+// https://usewave.co
+// https://kreativedeals.com
+
 const ProjectsPage = () => {
   return (
     <>

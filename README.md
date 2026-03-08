@@ -1,4 +1,4 @@
-ai blogs
-react helmet and written content
+ai blogs with react helmet
 google analytics and effectiveness score
+google ads
 dark mode
