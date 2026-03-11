@@ -280,3 +280,31 @@ img {
   transform-origin: 25vw -3vh;
   box-shadow: 60vmin 0 23.5vmin currentColor;
 }
+
+/* Custom utility to apply the gradient bullet */
+.list-gradient-bullet li {
+  position: relative;
+  list-style: none; /* Hide the default bullet */
+  padding-left: 1.5rem; /* Make room for the new bullet */
+}
+
+.list-gradient-bullet li::before {
+  content: "•"; /* The bullet character */
+  position: absolute;
+  left: 0;
+  
+  /* The Gradient Magic */
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-start, #3b82f6), 
+    var(--gradient-end, #22c55e)
+  );
+  
+  /* Clip the background to the text (the bullet) */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1;
+}

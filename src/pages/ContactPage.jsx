@@ -65,7 +65,7 @@ const ContactPage = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start justify-center">
               {/* Info Column */}
               <div className="h-full pr-6">
-                <p className="mt-3 mb-10 text-gray-800">
+                <p className="text-center lg:text-left max-w-5xl mb-10 mx-auto text-lg text-slate-800">
                   Whether you have a question about our services, need help with
                   a project, or just want to say hello, our team is ready to
                   chat.

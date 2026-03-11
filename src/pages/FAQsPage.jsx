@@ -40,7 +40,7 @@ const FAQsPage = () => {
 
         <GlassBox text="More than an agency — your lifelong tech partnership." />
 
-        <p className="text-center">
+        <p className="text-center max-w-5xl mb-10 mx-auto text-lg text-slate-800">
           Have a question? We've gathered the most common inquiries here to help
           you get the answers you need, fast. Everything you need to know.
         </p>
@@ -93,10 +93,12 @@ const FAQsPage = () => {
         assist you personally. Click the button below to get in touch, and we'll
         get back to you as soon as possible.
       </p>
-      <GradientButton
-        text="Let's Connect"
-        onClick={() => navigate("/contact")}
-      />
+      <div className="flex justify-center items-center">
+        <GradientButton
+          text="Let's Connect"
+          onClick={() => navigate("/contact")}
+        />
+      </div>
     </>
   );
 };

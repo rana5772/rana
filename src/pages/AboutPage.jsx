@@ -9,6 +9,7 @@ import GlassBox from "../components/GlassBox";
 import ServiceCard from "../sections/About/ServiceCard";
 import ServiceSection from "../sections/About/ServiceSection";
 import Typing from "../sections/About/Typing";
+import { ElfsightWidget } from "react-elfsight-widget";
 
 const About = () => {
   return (
@@ -34,7 +35,7 @@ const About = () => {
 
         <GlassBox text="Project goes live within 1 week" />
 
-        <p className="text-center max-w-5xl mb-10 mx-auto">
+        <p className="text-center max-w-5xl mb-10 mx-auto text-lg text-slate-800">
           We are more than just a service provider; we are your dedicated,
           long-term partner committed to supporting your technology needs and
           helping your business grow every step of the way.
@@ -58,8 +59,7 @@ const About = () => {
 
         <ServiceSection />
 
-        <CodeSection />
-        {/* <GridSection /> */}
+        <ElfsightWidget widgetID="4aff476c-65e8-44f4-8bf7-5524bb84196c" lazy />
       </div>
     </>
   );
