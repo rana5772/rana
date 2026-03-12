@@ -45,9 +45,51 @@ const ProjectsPage = () => {
         </p>
 
         {/* links */}
-        <PhoneSection side={1} />
-        <PhoneSection side={2} />
-        <PhoneSection side={1} />
+        <PhoneSection
+          side={1}
+          name="Upfound AI"
+          link="https://upfound.ai"
+          description="AI based hiring platform"
+        />
+        <PhoneSection
+          side={2}
+          name="HSJN FinWisdom"
+          link="https://hsjnfinwisdom.com"
+          description="Online stock market courses"
+        />
+        <PhoneSection
+          side={1}
+          name="Optivue"
+          link="https://optivue.in"
+          description="ERP platform for manufacturers"
+        />
+
+        <PhoneSection
+          side={2}
+          name="Use Wave"
+          link="https://usewave.co"
+          description="Autopilot Instagram lead generator"
+        />
+
+        <PhoneSection
+          side={1}
+          name="Dain Mart"
+          link="https://dainmart.com"
+          description="Online clothing store"
+        />
+
+        <PhoneSection
+          side={2}
+          name="E-commerce Tank"
+          link="https://ecommercetank.in"
+        />
+
+        <PhoneSection
+          side={1}
+          name="Kreative Deals"
+          link="https://kreativedeals.com"
+          description="Cooperate gifting solutions"
+        />
         <CodeSection />
       </div>
     </>

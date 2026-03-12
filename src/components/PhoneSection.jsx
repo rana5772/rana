@@ -33,7 +33,10 @@ const PhoneSection = ({
       <div
         className={`flex items-center justify-center py-12 order-1 ${visualOrder} relative`}
       >
-        <div className="relative w-[260px] h-[520px] bg-black rounded-[30px] shadow-2xl p-2">
+        {/* Yellow Circle */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square h-[400px] rounded-full bg-sky-300 blur-xl"></div>
+
+        <div className="relative w-[260px] h-[520px] bg-black rounded-[30px] shadow-2xl p-2 z-10">
           <div className="absolute top-1 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-xl z-10"></div>
 
           <div className="w-full h-full bg-white rounded-[22px] overflow-hidden flex flex-col">
@@ -53,6 +56,7 @@ const PhoneSection = ({
               <p className="text-gray-500 text-center text-sm">{description}</p>
               <a
                 href={link}
+                target="_blank"
                 className="gradient-bg mt-3 text-white px-4 py-2 rounded-lg text-sm"
               >
                 Open
@@ -84,6 +88,7 @@ const PhoneSection = ({
           <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-5 w-full items-center">
             <a
               href={link}
+              target="_blank"
               className="w-full sm:w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
             >
               Visit Now <FaArrowRight />
