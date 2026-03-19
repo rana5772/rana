@@ -1,4 +1,4 @@
 ai blogs with react helmet
-google analytics and effectiveness score
+pagespeed.web.dev
 google ads
 dark mode
