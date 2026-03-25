@@ -91,10 +91,3 @@
 .pause-marquee:hover {
   animation-play-state: paused;
 }
-
-[id="picture"] {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  will-change: transform; /* Hint to browser for optimization */
-}

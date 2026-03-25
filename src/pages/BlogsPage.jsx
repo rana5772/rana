@@ -8,7 +8,6 @@ import { ThreeDots } from "react-loader-spinner";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 const BlogsPage = () => {
-  
   const { pageNumber } = useParams();
   const navigate = useNavigate();
 
@@ -161,13 +160,16 @@ const BlogsPage = () => {
                   key={post._id}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
-                  
                   <div
                     id="picture"
-                    className="bg-gray-300 h-60 w-full bg-cover bg-no-repeat bg-center"
-                    // style={{ backgroundImage: `url(${post.image})` }}
-                    style={{ backgroundImage: `url('/images/demo.png')` }}
-                  ></div>
+                    className="bg-gray-300 h-60 w-full overflow-hidden"
+                  >
+                    <img
+                      src={post.image}
+                      alt={post.title || "Post image"}
+                      className="h-full w-full object-cover object-center"
+                    />
+                  </div>
 
                   <div className="p-6 flex-1 flex flex-col">
                     {/* 3. Updated dynamic category label */}
