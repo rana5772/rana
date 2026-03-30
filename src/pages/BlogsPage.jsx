@@ -160,16 +160,19 @@ const BlogsPage = () => {
                   key={post._id}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
+                  {/*  */}
                   <div
                     id="picture"
                     className="bg-gray-300 h-60 w-full overflow-hidden"
                   >
                     <img
-                      src={post.image}
+                      // src={post.image}
+                      src={"/images/demo.png"}
                       alt={post.title || "Post image"}
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
+                  {/*  */}
 
                   <div className="p-6 flex-1 flex flex-col">
                     {/* 3. Updated dynamic category label */}
@@ -180,7 +183,7 @@ const BlogsPage = () => {
                     >
                       {post.category}
                     </span>
-                    <h3 className="text-xl font-semibold new-font mt-3 mb-2 leading-tight">
+                    <h3 className="text-xl hover:text-blue-500 cursor-pointer font-semibold new-font mt-3 mb-2 leading-tight">
                       {post.title}
                     </h3>
                     <p className="text-gray-600 mb-5 leading-relaxed line-clamp-3 flex-1">
@@ -190,6 +193,7 @@ const BlogsPage = () => {
                       <span>
                         {new Date(post.createdAt).toLocaleDateString()}
                       </span>
+                      <button className="text-blue-600 p-1">Read Mode</button>
                     </div>
                   </div>
                 </article>
