@@ -27,7 +27,6 @@ const BlogsPage = () => {
     "general",
   ];
 
-  // 1. Define the color mapping
   const categoryColors = {
     design: "bg-pink-100 text-pink-700 border-pink-200",
     marketing: "bg-orange-100 text-orange-700 border-orange-200",
@@ -35,12 +34,31 @@ const BlogsPage = () => {
     technology: "bg-blue-100 text-blue-700 border-blue-200",
     "ai automation": "bg-purple-100 text-purple-700 border-purple-200",
     general: "bg-gray-100 text-gray-700 border-gray-200",
-    default: "bg-blue-500 text-white", // Fallback
+    default: "bg-blue-500 text-white",
   };
 
-  // 2. Helper function to get classes
   const getCategoryStyles = (cat) => {
     return categoryColors[cat?.toLowerCase()] || categoryColors.default;
+  };
+
+  /**
+   * Helper to determine the image path based on category and post index
+   */
+  const getBlogImage = (category, index) => {
+    let folder = "General";
+    const cat = category?.toLowerCase();
+
+    // Map categories to your specific folder names
+    if (cat === "ai automation" || cat === "ai") {
+      folder = "AI";
+    } else if (cat) {
+      // Capitalize first letter to match: Design, Business, Marketing, etc.
+      folder = cat.charAt(0).toUpperCase() + cat.slice(1);
+    }
+
+    // Cycle 1-5: (index % 5) gives 0-4, adding 1 gives 1-5
+    const imageNumber = (index % 5) + 1;
+    return `/Blog-Images/${folder}/${imageNumber}.jpg`;
   };
 
   const currentPage = parseInt(pageNumber) || 1;
@@ -113,14 +131,14 @@ const BlogsPage = () => {
             key={cat}
             onClick={() => handleCategoryChange(cat)}
             className={`
-        px-6 py-2.5 text-sm uppercase font-medium rounded-full
-        transition-all duration-200
-        ${
-          selectedCategory === cat || (cat === "all" && selectedCategory === "")
-            ? "gradient-bg text-white shadow-[0px_4px_0px_0px_rgba(0,0,0,0.3)]"
-            : "bg-white text-gray-800 shadow-[0px_4px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.2)] hover:translate-y-[2px]"
-        }
-      `}
+              px-6 py-2.5 text-sm uppercase font-medium rounded-full
+              transition-all duration-200
+              ${
+                selectedCategory === cat || (cat === "all" && selectedCategory === "")
+                  ? "gradient-bg text-white shadow-[0px_4px_0px_0px_rgba(0,0,0,0.3)]"
+                  : "bg-white text-gray-800 shadow-[0px_4px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.2)] hover:translate-y-[2px]"
+              }
+            `}
           >
             {cat}
           </button>
@@ -155,30 +173,30 @@ const BlogsPage = () => {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.length > 0 ? (
-              blogs.map((post) => (
+              blogs.map((post, index) => (
                 <article
                   key={post._id}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
-                  {/*  */}
                   <div
                     id="picture"
                     className="bg-gray-300 h-60 w-full overflow-hidden"
                   >
                     <img
-                      // src={post.image}
-                      src={"/images/demo.png"}
+                      src={getBlogImage(post.category, index)}
                       alt={post.title || "Post image"}
                       className="h-full w-full object-cover object-center"
+                      onError={(e) => {
+                        // Use the requested fallback image
+                        e.target.src = "/images/demo.jpg";
+                      }}
                     />
                   </div>
-                  {/*  */}
 
                   <div className="p-6 flex-1 flex flex-col">
-                    {/* 3. Updated dynamic category label */}
                     <span
                       className={`text-[12px] px-2.5 py-0.5 rounded-full border uppercase font-medium tracking-widest w-fit ${getCategoryStyles(
-                        post.category,
+                        post.category
                       )}`}
                     >
                       {post.category}
