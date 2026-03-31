@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import Heading from "../components/Heading";
 import axios from "axios";
 import GlassBox from "../components/GlassBox";
-import { ThreeDots } from "react-loader-spinner";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 /**
@@ -17,8 +16,13 @@ const BlogImage = ({ src, alt }) => {
     <div className="relative h-60 w-full bg-gray-200 overflow-hidden">
       {/* Skeleton Shimmer */}
       {!isLoaded && (
-        <div className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200" 
-             style={{ backgroundSize: '200% 100%', animation: 'shimmer 1.5s infinite linear' }}>
+        <div
+          className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200"
+          style={{
+            backgroundSize: "200% 100%",
+            animation: "shimmer 1.5s infinite linear",
+          }}
+        >
           <style>{`
             @keyframes shimmer {
               0% { background-position: -200% 0; }
@@ -53,7 +57,15 @@ const BlogsPage = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const categories = ["all", "design", "marketing", "business", "technology", "ai automation", "general"];
+  const categories = [
+    "all",
+    "design",
+    "marketing",
+    "business",
+    "technology",
+    "ai automation",
+    "general",
+  ];
 
   const categoryColors = {
     design: "bg-pink-100 text-pink-700 border-pink-200",
@@ -65,7 +77,8 @@ const BlogsPage = () => {
     default: "bg-blue-500 text-white",
   };
 
-  const getCategoryStyles = (cat) => categoryColors[cat?.toLowerCase()] || categoryColors.default;
+  const getCategoryStyles = (cat) =>
+    categoryColors[cat?.toLowerCase()] || categoryColors.default;
 
   const getBlogImage = (category, index) => {
     let folder = "General";
@@ -127,7 +140,8 @@ const BlogsPage = () => {
 
       <div className="text-center mb-12">
         <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-          Discover our latest insights, stories, and updates to help you stay informed and inspired.
+          Discover our latest insights, stories, and updates to help you stay
+          informed and inspired.
         </p>
       </div>
 
@@ -138,7 +152,8 @@ const BlogsPage = () => {
             key={cat}
             onClick={() => handleCategoryChange(cat)}
             className={`px-6 py-2.5 text-sm uppercase font-medium rounded-full transition-all duration-200 ${
-              selectedCategory === cat || (cat === "all" && selectedCategory === "")
+              selectedCategory === cat ||
+              (cat === "all" && selectedCategory === "")
                 ? "gradient-bg text-white shadow-[0px_4px_0px_0px_rgba(0,0,0,0.3)]"
                 : "bg-white text-gray-800 shadow-[0px_4px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.2)] hover:translate-y-[2px]"
             }`}
@@ -149,15 +164,44 @@ const BlogsPage = () => {
       </div>
 
       {loading && (
-        <div className="flex justify-center items-center h-60">
-          <ThreeDots height="80" width="80" radius="9" color="#3b82f6" visible={true} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[...Array(6)].map((_, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl overflow-hidden shadow-md animate-pulse"
+            >
+              {/* Image Skeleton */}
+              <div className="h-60 w-full bg-gray-300" />
+
+              {/* Content Skeleton */}
+              <div className="p-6">
+                <div className="h-4 w-24 bg-gray-300 rounded mb-3" />
+                <div className="h-6 w-full bg-gray-300 rounded mb-2" />
+                <div className="h-6 w-5/6 bg-gray-300 rounded mb-4" />
+
+                <div className="space-y-2 mb-4">
+                  <div className="h-4 w-full bg-gray-300 rounded" />
+                  <div className="h-4 w-4/5 bg-gray-300 rounded" />
+                  <div className="h-4 w-3/5 bg-gray-300 rounded" />
+                </div>
+
+                <div className="flex justify-between items-center pt-4 border-t">
+                  <div className="h-4 w-20 bg-gray-300 rounded" />
+                  <div className="h-4 w-16 bg-gray-300 rounded" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
       {error && !loading && (
         <div className="text-center py-10">
           <p className="text-xl text-rose-500 mb-4">{error} :(</p>
-          <button onClick={() => navigate("/blogs/page/1")} className="px-4 py-2 bg-blue-600 text-white rounded-lg">
+          <button
+            onClick={() => navigate("/blogs/page/1")}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+          >
             Back to Page 1
           </button>
         </div>
@@ -168,16 +212,20 @@ const BlogsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.length > 0 ? (
               blogs.map((post, index) => (
-                <article key={post._id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
-                  
+                <article
+                  key={post._id}
+                  className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+                >
                   {/* Updated Image section using the sub-component */}
-                  <BlogImage 
-                    src={getBlogImage(post.category, index)} 
-                    alt={post.title} 
+                  <BlogImage
+                    src={getBlogImage(post.category, index)}
+                    alt={post.title}
                   />
 
                   <div className="p-6 flex-1 flex flex-col">
-                    <span className={`text-[12px] px-2.5 py-0.5 rounded-full border uppercase font-medium tracking-widest w-fit ${getCategoryStyles(post.category)}`}>
+                    <span
+                      className={`text-[12px] px-2.5 py-0.5 rounded-full border uppercase font-medium tracking-widest w-fit ${getCategoryStyles(post.category)}`}
+                    >
                       {post.category}
                     </span>
                     <h3 className="text-xl hover:text-blue-500 cursor-pointer font-semibold mt-3 mb-2 leading-tight">
@@ -187,14 +235,18 @@ const BlogsPage = () => {
                       {post.content}
                     </p>
                     <div className="flex items-center justify-between text-sm text-gray-500 border-t pt-4">
-                      <span>{new Date(post.createdAt).toLocaleDateString()}</span>
+                      <span>
+                        {new Date(post.createdAt).toLocaleDateString()}
+                      </span>
                       <button className="text-blue-600 p-1">Read More</button>
                     </div>
                   </div>
                 </article>
               ))
             ) : (
-              <div className="col-span-full text-center py-10 text-gray-500">No blogs found.</div>
+              <div className="col-span-full text-center py-10 text-gray-500">
+                No blogs found.
+              </div>
             )}
           </div>
 
@@ -213,7 +265,9 @@ const BlogsPage = () => {
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
                   className={`px-4 py-2 rounded-sm border-black/20 transition ${
-                    currentPage === index + 1 ? "gradient-bg text-white" : "bg-white hover:bg-gray-50"
+                    currentPage === index + 1
+                      ? "gradient-bg text-white"
+                      : "bg-white hover:bg-gray-50"
                   }`}
                 >
                   {index + 1}
