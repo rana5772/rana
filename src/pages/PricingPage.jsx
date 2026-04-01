@@ -2,6 +2,12 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Heading from "../components/Heading";
 import GradientButton from "../components/GradientButton";
+import PortfolioComponent from "../components/PortfolioComponent";
+import ComparisonTable from "../components/ComparisonTable";
+import SpecialPlans from "../components/SpecialPlans";
+import MobileAppDev from "../components/MobileAppDev";
+import FoodDeliveryComponent from "../components/FoodDeliveryComponent";
+import EcommerceComponent from "../components/EcommerceComponent";
 
 const PricingPage = () => {
   return (
@@ -23,6 +29,15 @@ const PricingPage = () => {
           </>
         }
       />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <PortfolioComponent />
+        <ComparisonTable />
+        <MobileAppDev />
+        <FoodDeliveryComponent />
+        <EcommerceComponent />
+        <SpecialPlans />
+      </div>
     </>
   );
 };

@@ -45,7 +45,7 @@ const BlogsPage = () => {
         if (data.totalPages > 0 && currentPage > data.totalPages)
           navigate(`/blogs/page/1`, { replace: true });
       } catch {
-        setError("Failed to load blogs");
+        setError("Failed to load blogs :(");
       } finally {
         setLoading(false);
       }
@@ -100,7 +100,7 @@ const BlogsPage = () => {
         {loading ? (
           [...Array(6)].map((_, i) => <BlogSkeleton key={i} />)
         ) : error ? (
-          <div className="col-span-full text-center py-10 text-rose-500">
+          <div className="col-span-full uppercase text-[18px] text-center py-10 text-rose-500">
             {error}
           </div>
         ) : (
