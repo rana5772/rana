@@ -1,4 +1,5 @@
 import React from "react";
+import Heading from "../../components/Heading";
 
 const features = [
   {
@@ -30,21 +31,29 @@ const features = [
 const FoodDeliveryComponent = () => {
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-        🍔 Food Delivery App
-      </h2>
-      <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+      {/* Applied the Heading component style */}
+      <Heading
+        emoji="🍔"
+        heading="Food Delivery App"
+        mt={false}
+        underline={false}
+      />
+
+      {/* Applied bg-white/40 backdrop-blur-lg and border-gray-100 */}
+      <div className="relative z-0 isolate bg-white/40 backdrop-blur-lg rounded-2xl shadow-lg p-8 border border-gray-100">
         <p className="text-xl text-center text-gray-700 mb-6">
           Professional mobile ordering for your restaurant.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Switched back to grid-cols-2 to match reference styling */}
+        <div className="grid md:grid-cols-2 gap-5">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="flex items-start p-3 bg-gray-50 rounded-lg"
+              className="flex items-start p-3 bg-gray-50 border-gray-500 rounded-lg"
             >
+              {/* Changed icon color to purple-500 to match reference */}
               <svg
-                className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0"
+                className="w-5 h-5 text-purple-500 mt-0.5 mr-3 flex-shrink-0"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >

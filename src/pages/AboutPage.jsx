@@ -1,12 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Heading from "../components/Heading";
-import GridSection from "../sections/About/GridSection";
-import CodeSection from "../sections/About/CodeSection";
 import ProfileCard from "../sections/About/ProfileCard";
-import ParallaxSection from "../sections/About/ParallaxSection";
 import GlassBox from "../components/GlassBox";
-import ServiceCard from "../sections/About/ServiceCard";
 import ServiceSection from "../sections/About/ServiceSection";
 import Typing from "../sections/About/Typing";
 import { ElfsightWidget } from "react-elfsight-widget";

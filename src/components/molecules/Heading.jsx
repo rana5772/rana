@@ -2,6 +2,7 @@ import React from "react";
 import "../organs.css";
 
 const Heading = ({
+  emoji = "",      // New Prop for emoji
   heading = "Heading",
   mt = true,
   underline = true,
@@ -18,12 +19,16 @@ const Heading = ({
     <div className={`${alignmentClass} font-medium`}>
       <h1
         className={`
-          relative inline-block main-heading text-5xl mb-5 
+          relative inline-block text-5xl mb-5 
           ${underline ? "animated-underline" : ""} 
           ${mt ? "mt-20" : ""}
         `}
       >
-        {heading}
+        {/* Emoji is outside the gradient span */}
+        {emoji && <span className="mr-2">{emoji}</span>}
+        
+        {/* Only the text gets the gradient class */}
+        <span className="main-heading">{heading}</span>
       </h1>
     </div>
   );

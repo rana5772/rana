@@ -1,13 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Heading from "../components/Heading";
-import GradientButton from "../components/GradientButton";
-import PortfolioComponent from "../components/PortfolioComponent";
-import ComparisonTable from "../components/ComparisonTable";
-import SpecialPlans from "../components/SpecialPlans";
-import MobileAppDev from "../components/MobileAppDev";
-import FoodDeliveryComponent from "../components/FoodDeliveryComponent";
-import EcommerceComponent from "../components/EcommerceComponent";
+import PortfolioComponent from "../sections/Pricing/PortfolioComponent";
+import ComparisonTable from "../sections/Pricing/ComparisonTable";
+import MobileAppDev from "../sections/Pricing/MobileAppDev";
+import FoodDeliveryComponent from "../sections/Pricing/FoodDeliveryComponent";
+import EcommerceComponent from "../sections/Pricing/EcommerceComponent";
+import GridSection from "../sections/Pricing/GridSection";
+import GlassBox from "../components/GlassBox";
 
 const PricingPage = () => {
   return (
@@ -30,13 +30,22 @@ const PricingPage = () => {
         }
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <GlassBox text="Transparent Pricing, Tailored to You." />
+
+      <div className="text-center">
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+          Choose the plan that fits your goals and start scaling
+          today.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-6">
         <PortfolioComponent />
         <ComparisonTable />
         <MobileAppDev />
         <FoodDeliveryComponent />
         <EcommerceComponent />
-        <SpecialPlans />
+        <GridSection />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import Heading from "../../components/Heading";
 
 const features = [
   {
@@ -34,10 +35,9 @@ const features = [
 const EcommerceComponent = () => {
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-        🛍️ E-Commerce App
-      </h2>
-      <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+      <Heading emoji="🛍️" heading="E-Commerce App" mt={false} underline={false} />
+
+      <div className="bg-white/40 backdrop-blur-lg rounded-2xl shadow-lg p-8 border border-gray-100">
         <p className="text-xl text-center text-gray-700 mb-6">
           A high-performance mobile store designed for maximum sales.
         </p>
@@ -45,10 +45,10 @@ const EcommerceComponent = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="flex items-start p-3 bg-gray-50 rounded-lg"
+              className="flex items-start p-3 bg-gray-50 border-gray-500 rounded-lg"
             >
               <svg
-                className="w-5 h-5 text-purple-500 mt-0.5 mr-3 flex-shrink-0"
+                className="w-5 h-5 text-emerald-500 mt-0.5 mr-3 flex-shrink-0"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
