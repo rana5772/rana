@@ -9,7 +9,7 @@ const testimonials = [
     name: "Arjun Mehta",
     text: "The implementation was flawless. Our team's productivity increased by 40% within the first month of using this platform.",
     avatar:
-      "https://media.licdn.com/dms/image/v2/D5603AQEaRovQLzuTTg/profile-displayphoto-scale_400_400/B56ZxNuRXRJAAk-/0/1770830503332?e=1772668800&v=beta&t=YVpkY2yP4-Oxr08s-nriOEaa64GodneY2tfs1LwQfXQ",
+      "https://i.postimg.cc/FHVnxR2b/1.png",
   },
   {
     id: 2,
@@ -22,21 +22,21 @@ const testimonials = [
     name: "Rohan Deshmukh",
     text: "This transformed how we handle client feedback. The automated workflows saved us dozens of hours every week.",
     avatar:
-      "https://media.licdn.com/dms/image/v2/D5603AQEFKV5PlDq7qA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1709476748371?e=1772668800&v=beta&t=9ySYBeC6_L2sNb-d4fawJeABC0i4UCW6pjpPyfPSONI",
+      "https://i.postimg.cc/v1f5TTJm/2.png",
   },
   {
     id: 4,
     name: "Anshul Mehra",
     text: "Exceptional support and a robust feature set. I can't imagine running our daily operations without it.",
     avatar:
-      "https://media.licdn.com/dms/image/v2/C4D03AQEakYpSyyhs3g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1535720826597?e=1772668800&v=beta&t=j4_WZd_QWX1JJajNXW5zFHn0msha7QFjGj9zC4hGiJM",
+      "https://i.postimg.cc/D4VDsSZP/3.png",
   },
   {
     id: 5,
-    name: "Siddharth",
+    name: "Neha Yadav",
     text: "The best investment we've made this year. The insights provided are deep, actionable, and easy to share.",
     avatar:
-      "https://media.licdn.com/dms/image/v2/D5603AQH6PrG2Mas0Hw/profile-displayphoto-shrink_400_400/B56ZTNObAzGsAo-/0/1738609898638?e=1772668800&v=beta&t=yDECNiCKLFTi9z84dFBMsnlC_8jyW8IbOR64bz68hA4",
+      "https://i.postimg.cc/B891rsjv/4.png",
   },
 ];
 

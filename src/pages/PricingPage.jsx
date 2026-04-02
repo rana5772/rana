@@ -8,8 +8,12 @@ import FoodDeliveryComponent from "../sections/Pricing/FoodDeliveryComponent";
 import EcommerceComponent from "../sections/Pricing/EcommerceComponent";
 import GridSection from "../sections/Pricing/GridSection";
 import GlassBox from "../components/GlassBox";
+import GradientButton from "../components/GradientButton";
+import { useNavigate } from "react-router-dom";
 
 const PricingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Helmet>
@@ -34,8 +38,7 @@ const PricingPage = () => {
 
       <div className="text-center">
         <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-          Choose the plan that fits your goals and start scaling
-          today.
+          Choose the plan that fits your goals and start scaling today.
         </p>
       </div>
 
@@ -46,6 +49,18 @@ const PricingPage = () => {
         <FoodDeliveryComponent />
         <EcommerceComponent />
         <GridSection />
+      </div>
+
+      <p className=" text-center mb-5 max-w-screen-lg mx-auto text-gray-800">
+        Need further assistance? Our support team is available to help with any
+        specific inquiries. Click the button below to submit your request, and a
+        representative will contact you shortly.
+      </p>
+      <div className="flex justify-center items-center">
+        <GradientButton
+          text="Let's Connect"
+          onClick={() => navigate("/contact")}
+        />
       </div>
     </>
   );

@@ -80,7 +80,7 @@ const ServiceCard = ({
 
 const GridSection = () => {
   return (
-    <div className="container px-10 mx-auto mt-5">
+    <div className="container mx-auto mt-5">
       <div className="mt-20 mb-12 h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
 
       <Heading heading="Special Plans" mt={false} underline={false} />
