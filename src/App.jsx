@@ -20,6 +20,8 @@ import PricingPage from "./pages/PricingPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
 import ChatBot from "./layouts/ChatBot";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TnC from "./pages/TnC";
 
 function App() {
   const location = useLocation();
@@ -66,6 +68,12 @@ function App() {
       case "/faqs":
         title = "FAQs | rana.net.in";
         break;
+      case "/privacy-policy":
+        title = "Privacy Policy | rana.net.in";
+        break;
+      case "/terms-&-conditions":
+        title = "Terms & Conditions | rana.net.in";
+        break;
       default:
         title = "rana.net.in";
         break;
@@ -99,6 +107,8 @@ function App() {
             <Route path="/blogs/page/:pageNumber" element={<BlogsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faqs" element={<FAQsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-&-conditions" element={<TnC />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

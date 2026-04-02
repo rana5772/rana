@@ -46,6 +46,22 @@ function Footer() {
                 business needs.
               </p>
 
+              <div className="flex flex-col md:flex-row gap-3">
+                <NavLink
+                to="/privacy-policy"
+                className="inline-block underline text-black link-primary"
+              >
+                Privacy Policy
+              </NavLink>
+
+              <NavLink
+                to="/terms-&-conditions"
+                className="inline-block underline text-black link-primary"
+              >
+                Terms & Conditions
+              </NavLink>
+              </div>
+
               <h5 className="mt-6 text-lg new-font font-semibold text-gray-900">
                 Navigation
               </h5>
@@ -56,7 +72,7 @@ function Footer() {
                     <NavLink
                       to={link.path}
                       end={link.end}
-                      className="inline-block link-primary transition-all duration-200 hover:translate-x-2"
+                      className="inline-block text-gray-900 link-primary transition-all duration-200 hover:translate-x-2"
                     >
                       → {link.name}
                     </NavLink>

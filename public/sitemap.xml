@@ -42,4 +42,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://rana.net.in/privacy-policy</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rana.net.in/terms-&amp;-conditions</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
