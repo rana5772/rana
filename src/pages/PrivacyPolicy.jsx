@@ -52,9 +52,9 @@ const PrivacyPolicy = () => {
                   href="https://policies.google.com/technologies/ads"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-700 underline font-medium"
+                  className="text-blue-700 text-sm underline font-medium"
                 >
-                  https://policies.google.com/technologies/ads
+                  policies.google.com/technologies/ads
                 </a>
               </p>
             </section>
@@ -109,24 +109,16 @@ const PrivacyPolicy = () => {
 
             <section className="pt-6 border-t border-gray-100">
               <h2 className="text-xl font-semibold text-gray-900 mb-3">
-                6. Contact Us
+                Contact Information
               </h2>
-              <p className="text-gray-600">
-                If you have any questions about this Privacy Policy, please
-                reach out:
+              <p className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-blue-900">
+                Questions about the Terms and Conditions should be sent to us
+                at: <br />
+                <strong>Email:</strong> vaibhav.1098@hotmail.com <br />
+                <strong>Phone:</strong> +91 9311650067 <br />
+                <strong>Address:</strong> Nagad Computer Wholesalers, Shikrapur,
+                Maharashtra 412208, India.
               </p>
-              <div className="mt-4 text-sm text-gray-800">
-                <p>
-                  <strong>Founder:</strong> Vaibhav Rana
-                </p>
-                <p>
-                  <strong>Email:</strong> vaibhav.1098@hotmail.com
-                </p>
-                <p>
-                  <strong>Location:</strong> Nagad Computer Wholesalers,
-                  Shikrapur, Maharashtra 412208, India.
-                </p>
-              </div>
             </section>
           </div>
         </div>

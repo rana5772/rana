@@ -188,7 +188,7 @@ const ComparisonTable = () => {
   };
 
   return (
-    <section className="mb-16 px-4">
+    <section className="mb-16">
       <div className="mt-20 mb-12 h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
 
       <Heading

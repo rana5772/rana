@@ -12,26 +12,35 @@ const PortfolioCard = () => {
   ];
 
   return (
-    <div className="shadow-md overflow-hidden rounded-2xl max-w-6xl mx-auto" ref={ref}>
+    <div
+      className="shadow-md overflow-hidden rounded-2xl max-w-6xl mx-auto"
+      ref={ref}
+    >
       <div className="w-full bg-white/65 rounded-2xl overflow-hidden flex flex-col md:flex-row">
         {/* Progress Bars Section */}
-        <div className="relative h-72 md:w-1/3 md:h-auto md:min-h-[250px] m-4 rounded-2xl flex-shrink-0 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+        <div className="relative md:w-1/3 md:h-auto  m-4 rounded-2xl flex-shrink-0 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
           <div className="w-full new-font px-6 py-4 space-y-6">
             {progressItems.map((item) => (
               <div key={item.label}>
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">{item.label}</span>
-                  <span className="text-sm text-gray-700">
-                    {item.value}%
+                  <span className="text-sm font-semibold text-gray-700">
+                    {item.label}
                   </span>
+                  <span className="text-sm text-gray-700">{item.value}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                   <motion.div
                     key={`bar-${inView}`}
                     className="blue-bg h-3 rounded-full"
                     initial={{ width: 0 }}
-                    animate={inView ? { width: `${item.value}%` } : { width: 0 }}
-                    transition={{ duration: 1, delay: item.delay, ease: "easeOut" }}
+                    animate={
+                      inView ? { width: `${item.value}%` } : { width: 0 }
+                    }
+                    transition={{
+                      duration: 1,
+                      delay: item.delay,
+                      ease: "easeOut",
+                    }}
                   >
                     <div className="h-full w-full animate-pulse bg-white/20"></div>
                   </motion.div>
@@ -48,9 +57,17 @@ const PortfolioCard = () => {
           </h3>
           <div className="text-gray-600 mb-4">
             <ul className="list-disc ml-5 space-y-1">
-              <li>High speed and SEO ready business website with responsive design aimed to convert visitors into loyal customers.</li>
-              <li>Best for agencies, consultants, doctors, lawyers, or startups.</li>
-              <li>Lightning-fast load speed and Google Search Console setup to track traffic.</li>
+              <li>
+                High speed and SEO ready business website with responsive design
+                aimed to convert visitors into loyal customers.
+              </li>
+              <li>
+                Best for agencies, consultants, doctors, lawyers, or startups.
+              </li>
+              <li>
+                Lightning-fast load speed and Google Search Console setup to
+                track traffic.
+              </li>
             </ul>
           </div>
           <div className="flex flex-wrap gap-3">
