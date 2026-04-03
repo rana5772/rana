@@ -1,0 +1,145 @@
+{
+  "features": [
+    {
+      "category": "Pricing",
+      "items": [
+        {
+          "name": "Setup Cost",
+          "starter": "Rs 11,000/-",
+          "advanced": "Rs 16,000/-",
+          "isCheck": false
+        }
+      ]
+    },
+    {
+      "category": "Shopping Cart",
+      "items": [
+        {
+          "name": "Add to cart without login",
+          "starter": true,
+          "advanced": true,
+          "isCheck": true
+        }
+      ]
+    },
+    {
+      "category": "Product Reviews",
+      "items": [
+        {
+          "name": "Star rating",
+          "starter": true,
+          "advanced": true,
+          "isCheck": true
+        },
+        {
+          "name": "Written comments",
+          "starter": false,
+          "advanced": true,
+          "isCheck": true
+        }
+      ]
+    },
+    {
+      "category": "Order Management",
+      "items": [
+        {
+          "name": "Cancel order (user dashboard)",
+          "starter": false,
+          "advanced": true,
+          "isCheck": true
+        },
+        {
+          "name": "Order tracking",
+          "starter": "Basic history",
+          "advanced": "Detailed status updates ('Packed', 'Shipped', 'Out for Delivery')",
+          "isCheck": false
+        }
+      ]
+    },
+    {
+      "category": "SEO & Marketing",
+      "items": [
+        {
+          "name": "Basic meta tags",
+          "starter": true,
+          "advanced": true,
+          "isCheck": true
+        },
+        {
+          "name": "AI SEO optimisation",
+          "starter": false,
+          "advanced": true,
+          "isCheck": true
+        }
+      ]
+    },
+    {
+      "category": "Admin Panel",
+      "items": [
+        {
+          "name": "Standard management",
+          "starter": true,
+          "advanced": true,
+          "isCheck": true
+        },
+        {
+          "name": "Advanced analytics",
+          "starter": false,
+          "advanced": true,
+          "isCheck": true
+        }
+      ]
+    },
+    {
+      "category": "Payments",
+      "items": [
+        {
+          "name": "Razorpay / UPI",
+          "starter": true,
+          "advanced": true,
+          "isCheck": true
+        },
+        {
+          "name": "Credit Cards / Other",
+          "starter": false,
+          "advanced": true,
+          "isCheck": true
+        }
+      ]
+    },
+    {
+      "category": "Performance",
+      "items": [
+        {
+          "name": "Optimization",
+          "starter": "Standard",
+          "advanced": "Next-gen (WebP/Lazy)",
+          "isCheck": false
+        },
+        {
+          "name": "Scalability",
+          "starter": "5 Lakh users",
+          "advanced": "10 Lakh users",
+          "isCheck": false
+        }
+      ]
+    },
+    {
+      "category": "Support",
+      "items": [
+        {
+          "name": "Timeline",
+          "starter": "10 days",
+          "advanced": "15 days",
+          "isCheck": false
+        },
+        {
+          "name": "Free Maintenance",
+          "starter": "1 month",
+          "advanced": "3 months",
+          "isCheck": false
+        }
+      ]
+    }
+  ]
+}
