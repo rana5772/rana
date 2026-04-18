@@ -102,7 +102,7 @@ const ProjectsPage = () => {
             ]}
           />
 
-          <PhoneSection
+          {/* <PhoneSection
             side={1}
             name="Dain Mart"
             link="https://dainmart.com"
@@ -118,10 +118,10 @@ const ProjectsPage = () => {
               "Fresh Grocery essentials delivered to your doorstep",
               "Seamless Flight bookings with exclusive travel deals",
             ]}
-          />
+          /> */}
 
           <PhoneSection
-            side={2}
+            side={1}
             name="E-commerce Tank"
             link="https://ecommercetank.in"
             description="Amazon growth manager"
@@ -137,7 +137,7 @@ const ProjectsPage = () => {
           />
 
           <PhoneSection
-            side={1}
+            side={2}
             name="Kreative Deals"
             link="https://kreativedeals.com"
             description="Cooperate gifting solutions"
