@@ -1,4 +1,6 @@
-<!-- pagespeed.web.dev -->
-
-ai blogs with react helmet
-dark mode
+<ul>
+  <li>AI blogs</li>
+  <li>Google Ads</li>
+  <li>Dark Mode</li>
+  <li>pagespeed.web.dev</li>
+</ul>
