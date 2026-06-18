@@ -43,45 +43,6 @@ function App() {
 
     window.scrollTo(0, 0);
 
-    // Keep document title in sync with current route
-    const { pathname } = location;
-    let title = "rana.net.in";
-
-    switch (pathname) {
-      case "/":
-        title = "rana.net.in - Web & App dev services";
-        break;
-      case "/about":
-        title = "About Us | rana.net.in";
-        break;
-      case "/projects":
-        title = "Projects | rana.net.in";
-        break;
-      case "/pricing":
-        title = "Pricing | rana.net.in";
-        break;
-      case "/blogs":
-        title = "Blogs | rana.net.in";
-        break;
-      case "/contact":
-        title = "Contact Us | rana.net.in";
-        break;
-      case "/faqs":
-        title = "FAQs | rana.net.in";
-        break;
-      case "/privacy-policy":
-        title = "Privacy Policy | rana.net.in";
-        break;
-      case "/terms-&-conditions":
-        title = "Terms & Conditions | rana.net.in";
-        break;
-      default:
-        title = "rana.net.in";
-        break;
-    }
-
-    document.title = title;
-
     // Play transition sound on route change
     audio.currentTime = 0;
     audio.play().catch(() => {

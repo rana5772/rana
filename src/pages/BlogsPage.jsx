@@ -105,11 +105,11 @@ const BlogsPage = () => {
 
   return (
     <>
-      <Helmet>
+      <Helmet key={`${currentPage}-${selectedCategory}`}>
         <title>
           {selectedCategory === "all"
             ? `Blogs - Page ${currentPage} | rana.net.in`
-            : `${selectedCategory} Blogs - Page ${currentPage} | rana.net.in`}
+            : `Blogs - ${selectedCategory} - Page ${currentPage} | rana.net.in`}
         </title>
       </Helmet>
 
@@ -128,11 +128,10 @@ const BlogsPage = () => {
           <button
             key={cat}
             onClick={() => handleCategoryChange(cat)}
-            className={`px-6 py-2.5 text-sm uppercase font-medium rounded-full transition-all ${
-              selectedCategory === cat
-                ? "gradient-bg text-white shadow-lg"
-                : "bg-white text-gray-800 shadow-sm hover:translate-y-[1px]"
-            }`}
+            className={`px-6 py-2.5 text-sm uppercase font-medium rounded-full transition-all ${selectedCategory === cat
+              ? "gradient-bg text-white shadow-lg"
+              : "bg-white text-gray-800 shadow-sm hover:translate-y-[1px]"
+              }`}
           >
             {cat}
           </button>
@@ -179,11 +178,10 @@ const BlogsPage = () => {
             <button
               key={i}
               onClick={() => handlePageChange(i + 1)}
-              className={`px-4 py-2 rounded-sm border ${
-                currentPage === i + 1
-                  ? "gradient-bg text-white"
-                  : "bg-white"
-              }`}
+              className={`px-4 py-2 rounded-sm border ${currentPage === i + 1
+                ? "gradient-bg text-white"
+                : "bg-white"
+                }`}
             >
               {i + 1}
             </button>
