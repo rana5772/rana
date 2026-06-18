@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <header
       ref={navRef}
-      className="fixed select-none font-[450] new-font top-5 z-50 left-0 right-0 mx-4 md:mx-auto max-w-screen-xl"
+      className="fixed select-none font-[450] new-font top-5 z-50 left-0 right-0 mx-4 lg:mx-5 xl:mx-auto max-w-screen-xl"
     >
       <nav className="glass-medium border-b border-gray-200 p-4 rounded-xl relative z-[70]">
         <div className="container mx-auto flex px-5 justify-between items-center">
@@ -75,7 +75,7 @@ const Header = () => {
           </NavLink>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-8">
+          <ul className="hidden lg:flex gap-8">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink
@@ -90,7 +90,7 @@ const Header = () => {
           </ul>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMenu}
               className="text-3xl text-gray-800 p-1 focus:outline-none"
@@ -109,7 +109,7 @@ const Header = () => {
             animate={{ opacity: 1, height: "400px" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute top-0 left-0 w-full bg-white/30 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center z-[55] md:hidden overflow-hidden"
+            className="absolute top-0 left-0 w-full bg-white/30 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center z-[55] lg:hidden overflow-hidden"
           >
             <ul className="flex flex-col pt-[60px] justify-center items-center gap-3 text-center">
               {navLinks.map((link, index) => (
