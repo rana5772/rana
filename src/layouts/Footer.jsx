@@ -1,21 +1,26 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-const logo = "/images/logo.png";
+import { NavLink, useLocation } from "react-router-dom";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
+const logo = "/images/logo.png";
+
 function Footer() {
+  const location = useLocation();
+
   const navLinks = [
     { name: "Home", path: "/", end: true },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
-    { name: "Blogs", path: "/blogs" },
+    { name: "Blogs", path: "/blogs", matchPrefix: "/blog" },
     { name: "Pricing", path: "/pricing" },
     { name: "Contact", path: "/contact" },
     { name: "FAQs", path: "/faqs" },
   ];
+
   return (
-    <footer className="">
+    <footer>
       <hr className="w-4/5 mx-auto mt-12 border-gray-800" />
+
       <button
         className="group border hover:bg-white mx-auto block border-t-0 p-3 rounded-b-md transition-all"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -48,18 +53,18 @@ function Footer() {
 
               <div className="flex flex-col md:flex-row gap-3">
                 <NavLink
-                to="/privacy-policy"
-                className="inline-block underline text-black link-primary"
-              >
-                Privacy Policy
-              </NavLink>
+                  to="/privacy-policy"
+                  className="inline-block underline text-black link-primary"
+                >
+                  Privacy Policy
+                </NavLink>
 
-              <NavLink
-                to="/terms-&-conditions"
-                className="inline-block underline text-black link-primary"
-              >
-                Terms & Conditions
-              </NavLink>
+                <NavLink
+                  to="/terms-&-conditions"
+                  className="inline-block underline text-black link-primary"
+                >
+                  Terms & Conditions
+                </NavLink>
               </div>
 
               <h5 className="mt-6 text-lg new-font font-semibold text-gray-900">
@@ -72,7 +77,19 @@ function Footer() {
                     <NavLink
                       to={link.path}
                       end={link.end}
-                      className="inline-block text-gray-900 link-primary transition-all duration-200 hover:translate-x-2"
+                      className={({ isActive }) => {
+                        const active =
+                          isActive ||
+                          (link.matchPrefix &&
+                            location.pathname.startsWith(
+                              link.matchPrefix
+                            ));
+
+                        return `inline-block transition-all duration-200 hover:translate-x-2 ${active
+                            ? "text-[var(--primary)] font-medium"
+                            : "text-gray-900 link-primary"
+                          }`;
+                      }}
                     >
                       → {link.name}
                     </NavLink>
