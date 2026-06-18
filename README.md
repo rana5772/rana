@@ -3,4 +3,6 @@
   <li>Google Ads</li>
   <li>pagespeed.web.dev</li>
 </ul>
-design of blog page/error page/loading state
+
+error, loading
+react helmet

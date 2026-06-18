@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Heading from "../components/Heading";
+import { MdDateRange } from "react-icons/md";
 
 const categoryColors = {
   design: "bg-pink-100 text-pink-700 border-pink-200",
@@ -97,49 +99,51 @@ const BlogDetailsPage = () => {
       </Helmet>
 
       <article className="max-w-4xl mx-auto py-10">
-        <button
-          onClick={() => navigate(-1)}
-          className="mb-8 text-blue-600 hover:underline"
-        >
-          ← Back
-        </button>
 
-        <div className="overflow-hidden rounded-2xl shadow-lg">
-          <img
-            src={imageSrc}
-            alt={blog.title}
-            className="w-full h-[400px] object-cover"
-            onError={(e) => {
-              e.target.src = "/images/demo.jpg";
-            }}
-          />
-        </div>
+        {/* <button onClick={() => navigate(-1)} className="mb-8 text-blue-600 hover:underline">← Back</button> */}
 
         <div className="mt-8">
-          <span
-            className={`text-[12px] px-3 py-1 rounded-full border uppercase font-medium ${categoryColors[cat] || categoryColors.default
-              }`}
-          >
-            {blog.category}
-          </span>
 
-          <h1 className="text-4xl font-bold mt-4 mb-4 leading-tight">
-            {blog.title}
-          </h1>
 
-          <p className="text-gray-500 mb-10">
-            {new Date(blog.createdAt).toLocaleDateString(
-              "en-GB",
-              {
-                day: "2-digit",
-                month: "long",
-                year: "numeric",
-              },
-            )}
-          </p>
+          <Heading mt={false} underline={false} heading={blog.title} />
+
+          <div className="flex justify-center items-center gap-5">
+            <div className="flex justify-center items-center gap-1">
+              <MdDateRange />
+
+              <div>
+                {new Date(blog.createdAt).toLocaleDateString(
+                  "en-GB",
+                  {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  },
+                )}
+              </div>
+            </div>
+
+            <div
+              className={`text-[12px] px-3 py-1 rounded-full border uppercase font-medium ${categoryColors[cat] || categoryColors.default
+                }`}
+            >
+              {blog.category}
+            </div>
+          </div>
+
+          <div className="overflow-hidden my-5 rounded-md shadow-lg">
+            <img
+              src={imageSrc}
+              alt={blog.title}
+              className="w-full h-[400px] object-cover"
+              onError={(e) => {
+                e.target.src = "/images/demo.jpg";
+              }}
+            />
+          </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 leading-8 text-lg whitespace-pre-line">
+            <p className="text-gray-800 leading-8 text-lg whitespace-pre-line">
               {blog.content}
             </p>
           </div>

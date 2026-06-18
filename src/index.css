@@ -32,11 +32,17 @@
 
 .main-heading {
   font-family: "Bricolage Grotesque", sans-serif;
-  background: linear-gradient(to bottom, var(--heading-gradient-from), var(--heading-gradient-to));
+  background: linear-gradient(
+    to bottom,
+    var(--heading-gradient-from),
+    var(--heading-gradient-to)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline-block;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* laptop */
