@@ -4,6 +4,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Heading from "../components/Heading";
 import { MdDateRange } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import Loader from "../sections/Home/Loader";
 
 const categoryColors = {
   design: "bg-pink-100 text-pink-700 border-pink-200",
@@ -44,25 +48,41 @@ const BlogDetailsPage = () => {
 
   if (loading) {
     return (
-      <div className="py-24 text-center text-lg">
-        Loading blog...
+      <div>
+        <Loader opacity={30} />
       </div>
     );
   }
 
+  // error
   if (error || !blog) {
     return (
-      <div className="py-24 text-center">
-        <p className="text-red-500 mb-4">
-          {error || "Blog not found"}
-        </p>
+      <div className="min-h-[80vh] flex items-center justify-center px-6">
+        <div className="max-w-lg text-center">
+          <p className="text-3xl font-medium text-primary mb-2">
+            404
+          </p>
 
-        <button
-          onClick={() => navigate("/blogs/page/1")}
-          className="gradient-bg text-white px-6 py-2 rounded-lg"
-        >
-          Back to Blogs
-        </button>
+          <Heading mt={false} underline={false} heading="Blog Not Found" />
+
+
+          <p className="text-gray-800 mb-8">
+            The blog post you're looking for doesn't exist, may have been
+            removed, or the URL is incorrect.
+          </p>
+
+          <div className="flex justify-center items-center">
+
+            <button
+              onClick={() => navigate("/blogs/page/1")}
+              className="w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
+            >
+              <FaArrowLeft />
+              Back to Blogs
+            </button>
+          </div>
+
+        </div>
       </div>
     );
   }
@@ -100,16 +120,20 @@ const BlogDetailsPage = () => {
 
       <article className="max-w-4xl mx-auto py-10">
 
-        {/* <button onClick={() => navigate(-1)} className="mb-8 text-blue-600 hover:underline">← Back</button> */}
-
         <div className="mt-8">
-
 
           <Heading mt={false} underline={false} heading={blog.title} />
 
           <div className="flex justify-center items-center gap-5">
-            <div className="flex justify-center items-center gap-1">
-              <MdDateRange />
+
+            <div className="flex justify">
+              <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline">
+                <FaArrowCircleLeft className="text-3xl text-black" />
+              </button>
+            </div>
+
+            <div className="flex border-b justify-center items-center gap-1">
+              {/* <MdDateRange /> */}
 
               <div>
                 {new Date(blog.createdAt).toLocaleDateString(

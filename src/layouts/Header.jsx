@@ -56,7 +56,7 @@ const Header = () => {
       ref={navRef}
       className="fixed select-none font-[450] new-font top-5 z-50 left-0 right-0 mx-4 md:mx-auto max-w-screen-xl"
     >
-      <nav className="glass-light border-b border-gray-200 p-4 rounded-xl relative z-[70]">
+      <nav className="glass-medium border-b border-gray-200 p-4 rounded-xl relative z-[70]">
         <div className="container mx-auto flex px-5 justify-between items-center">
 
           {/* Logo */}
