@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const categoryColors = {
   design: "bg-pink-100 text-pink-700 border-pink-200",
@@ -12,20 +13,32 @@ const categoryColors = {
 
 const BlogCard = ({ post, index }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
 
   // Image Path Logic
   const cat = post.category?.toLowerCase();
+
   const folder =
     cat === "ai automation" || cat === "ai"
       ? "AI"
       : cat
         ? cat.charAt(0).toUpperCase() + cat.slice(1)
         : "General";
-  const imgSrc = `/Blog-Images/${folder}/${(index % 5) + 1}.jpg`;
+
+  const imageNumber =
+    (parseInt(post._id.slice(-6), 16) % 50) + 1;
+
+  const imgSrc = `/Blog-Images/${folder}/${imageNumber}.jpg`;
+
+  const openBlog = () => {
+    navigate(`/blog/${post._id}`);
+  };
 
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
+
       <div className="relative h-60 w-full bg-gray-200 overflow-hidden">
+
         {!isLoaded && (
           <div
             className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200"
@@ -34,10 +47,17 @@ const BlogCard = ({ post, index }) => {
               animation: "shimmer 1.5s infinite linear",
             }}
           >
-            <style>{`@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }`}</style>
+            <style>
+              {`@keyframes shimmer {
+                0% { background-position: -200% 0; }
+                100% { background-position: 200% 0; }
+              }`}
+            </style>
           </div>
         )}
+
         <img
+          onClick={openBlog}
           src={imgSrc}
           alt={post.title}
           onLoad={() => setIsLoaded(true)}
@@ -45,20 +65,37 @@ const BlogCard = ({ post, index }) => {
             e.target.src = "/images/demo.jpg";
             setIsLoaded(true);
           }}
-          className={`h-full w-full object-cover transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`h-full cursor-pointer w-full object-cover transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"
+            }`}
         />
       </div>
+
+
       <div className="p-6 flex-1 flex flex-col">
+
         <span
-          className={`text-[12px] px-2.5 py-0.5 rounded-full border uppercase font-medium w-fit ${categoryColors[cat] || categoryColors.default}`}
+          className={`text-[12px] px-2.5 py-0.5 rounded-full border uppercase font-medium w-fit ${categoryColors[cat] || categoryColors.default
+            }`}
         >
           {post.category}
         </span>
-        <h3 className="text-xl hover:text-blue-500 cursor-pointer font-semibold mt-3 mb-2 leading-tight">
+
+
+        <h3
+          onClick={openBlog}
+          className="text-xl hover:text-blue-500 cursor-pointer font-semibold mt-3 mb-2 leading-tight"
+        >
           {post.title}
         </h3>
-        <p className="text-gray-600 mb-5 line-clamp-3 flex-1">{post.content}</p>
+
+
+        <p className="text-gray-600 mb-5 line-clamp-3 flex-1">
+          {post.content}
+        </p>
+
+
         <div className="flex items-center justify-between text-sm text-gray-500 border-t pt-4">
+
           <span>
             {new Date(post.createdAt).toLocaleDateString("en-GB", {
               day: "2-digit",
@@ -66,9 +103,19 @@ const BlogCard = ({ post, index }) => {
               year: "numeric",
             })}
           </span>
-          <button className="text-blue-600 p-1">Read More</button>
+
+
+          <button
+            onClick={openBlog}
+            className="text-blue-600 p-1 hover:text-blue-700"
+          >
+            Read More
+          </button>
+
         </div>
+
       </div>
+
     </article>
   );
 };

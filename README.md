@@ -1,6 +1,10 @@
 <ul>
   <li>AI blogs</li>
   <li>Google Ads</li>
-  <li>Dark Mode</li>
   <li>pagespeed.web.dev</li>
 </ul>
+---------------
+design of blog page/error page/loading state
+navbar/footer blogs bold
+sluggify the links
+check those pages on search console 

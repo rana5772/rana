@@ -22,6 +22,7 @@ import AboutPage from "./pages/AboutPage";
 import ChatBot from "./layouts/ChatBot";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TnC from "./pages/TnC";
+import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 function App() {
   const location = useLocation();
@@ -104,7 +105,16 @@ function App() {
               path="/blogs"
               element={<Navigate to="/blogs/page/1" replace />}
             />
-            <Route path="/blogs/page/:pageNumber" element={<BlogsPage />} />
+
+            <Route
+              path="/blogs/page/:pageNumber"
+              element={<BlogsPage />}
+            />
+
+            <Route
+              path="/blog/:id"
+              element={<BlogDetailsPage />}
+            />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faqs" element={<FAQsPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
