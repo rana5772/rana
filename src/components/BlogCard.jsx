@@ -89,7 +89,7 @@ const BlogCard = ({ post, index }) => {
         </h3>
 
 
-        <p className="text-gray-600 mb-5 line-clamp-3 flex-1">
+        <p className="text-gray-600 mb-5 line-clamp-2 flex-1">
           {post.content}
         </p>
 

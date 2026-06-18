@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import Loader from "../sections/Home/Loader";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const categoryColors = {
   design: "bg-pink-100 text-pink-700 border-pink-200",
@@ -167,10 +169,11 @@ const BlogDetailsPage = () => {
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-gray-800 leading-8 text-lg whitespace-pre-line">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {blog.content}
-            </p>
+            </ReactMarkdown>
           </div>
+
         </div>
       </article>
     </>

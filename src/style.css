@@ -1,9 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 * {
   box-sizing: border-box;
   /* border: 1px solid crimson; */
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-family: "Bricolage Grotesque", sans-serif;
+  background: linear-gradient(to bottom,
+      var(--heading-gradient-from),
+      var(--heading-gradient-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.prose ul>li::marker,
+.prose ol>li::marker {
+  color: #000;
+}
+
+.prose hr {
+  border-color: #475569;
+  opacity: 1;
+}
+
+.prose p {
+  margin: 0.75rem 0;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0.75rem 0;
+}
+
+.prose li {
+  margin: 0.25rem 0;
+}
+
+.prose hr {
+  margin: 1rem 0;
+  border-color: #475569;
+  opacity: 1;
 }
 
 @theme {
@@ -42,11 +91,9 @@
   }
 
   .blue-text {
-    background: linear-gradient(
-      to bottom,
-      var(--gradient-start),
-      var(--gradient-end)
-    );
+    background: linear-gradient(to bottom,
+        var(--gradient-start),
+        var(--gradient-end));
     font-weight: 600;
     -webkit-background-clip: text;
     background-clip: text;
@@ -54,11 +101,9 @@
   }
 
   .blue-bg {
-    background: linear-gradient(
-      to right,
-      var(--gradient-end),
-      var(--gradient-start)
-    );
+    background: linear-gradient(to right,
+        var(--gradient-end),
+        var(--gradient-start));
   }
 
   .primary-bg {
@@ -70,24 +115,21 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(
-      -45deg,
-      var(--gradient-end),
-      var(--gradient-start)
-    );
+    background: linear-gradient(-45deg,
+        var(--gradient-end),
+        var(--gradient-start));
   }
 
   .gradient-bg-br {
-    background: linear-gradient(
-      to bottom right,
-      var(--gradient-start),
-      var(--gradient-end)
-    );
+    background: linear-gradient(to bottom right,
+        var(--gradient-start),
+        var(--gradient-end));
   }
 
   .link-primary {
     color: var(--text-body);
   }
+
   .link-primary:hover {
     color: var(--primary-text);
   }
@@ -110,11 +152,9 @@
   }
 
   .gradient-text {
-    background: linear-gradient(
-      to right,
-      var(--gradient-end),
-      var(--gradient-start)
-    );
+    background: linear-gradient(to right,
+        var(--gradient-end),
+        var(--gradient-start));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -125,25 +165,27 @@
   }
 
   .before-gradient-bg::before {
-    background: linear-gradient(
-      to right,
-      var(--gradient-start),
-      var(--gradient-end)
-    );
+    background: linear-gradient(to right,
+        var(--gradient-start),
+        var(--gradient-end));
   }
 
   .timeline-step-1 {
     background-color: var(--timeline-step-1);
   }
+
   .timeline-step-2 {
     background-color: var(--timeline-step-2);
   }
+
   .timeline-step-3 {
     background-color: var(--timeline-step-3);
   }
+
   .timeline-step-4 {
     background-color: var(--timeline-step-4);
   }
+
   .timeline-step-5 {
     background-color: var(--timeline-step-5);
   }
@@ -284,26 +326,27 @@ img {
 /* Custom utility to apply the gradient bullet */
 .list-gradient-bullet li {
   position: relative;
-  list-style: none; /* Hide the default bullet */
-  padding-left: 1.5rem; /* Make room for the new bullet */
+  list-style: none;
+  /* Hide the default bullet */
+  padding-left: 1.5rem;
+  /* Make room for the new bullet */
 }
 
 .list-gradient-bullet li::before {
-  content: "•"; /* The bullet character */
+  content: "•";
+  /* The bullet character */
   position: absolute;
   left: 0;
-  
+
   /* The Gradient Magic */
-  background: linear-gradient(
-    to bottom,
-    var(--gradient-start, #3b82f6), 
-    var(--gradient-end, #22c55e)
-  );
-  
+  background: linear-gradient(to bottom,
+      var(--gradient-start, #3b82f6),
+      var(--gradient-end, #22c55e));
+
   /* Clip the background to the text (the bullet) */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   font-weight: bold;
   font-size: 1.2em;
   line-height: 1;
