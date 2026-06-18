@@ -31,7 +31,7 @@ const BlogCard = ({ post, index }) => {
   const imgSrc = `/Blog-Images/${folder}/${imageNumber}.jpg`;
 
   const openBlog = () => {
-    navigate(`/blog/${post._id}`);
+    navigate(`/blog/${post.slug}`);
   };
 
   return (

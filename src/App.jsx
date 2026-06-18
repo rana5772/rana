@@ -112,7 +112,7 @@ function App() {
             />
 
             <Route
-              path="/blog/:id"
+              path="/blog/:slug"
               element={<BlogDetailsPage />}
             />
             <Route path="/contact" element={<ContactPage />} />

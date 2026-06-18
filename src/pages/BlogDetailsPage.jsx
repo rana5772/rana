@@ -14,7 +14,7 @@ const categoryColors = {
 };
 
 const BlogDetailsPage = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
 
   const [blog, setBlog] = useState(null);
@@ -25,7 +25,7 @@ const BlogDetailsPage = () => {
     const fetchBlog = async () => {
       try {
         const { data } = await axios.get(
-          `https://blogs.rana.net.in/api/blogs/${id}`,
+          `https://blogs.rana.net.in/api/blogs/title/${slug}`
         );
 
         setBlog(data);
@@ -38,7 +38,7 @@ const BlogDetailsPage = () => {
     };
 
     fetchBlog();
-  }, [id]);
+  }, [slug]);
 
   if (loading) {
     return (

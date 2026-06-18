@@ -6,5 +6,5 @@
 ---------------
 design of blog page/error page/loading state
 navbar/footer blogs bold
-sluggify the links
-check those pages on search console 
+react helmet for blogs
+save all in cache
