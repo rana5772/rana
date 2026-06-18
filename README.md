@@ -6,5 +6,3 @@
 ---------------
 design of blog page/error page/loading state
 navbar/footer blogs bold
-react helmet for blogs
-save all in cache

@@ -89,6 +89,11 @@ const BlogDetailsPage = () => {
           name="description"
           content={blog.content}
         />
+
+        <link
+          rel="canonical"
+          href={`https://rana.net.in/blog/${blog.slug}`}
+        />
       </Helmet>
 
       <article className="max-w-4xl mx-auto py-10">
