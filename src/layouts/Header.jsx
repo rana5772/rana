@@ -67,7 +67,7 @@ const Header = () => {
           >
             <img
               src={logo}
-              alt="logo"
+              alt="logo" 
               className="inline-block select-none h-[30px]"
               draggable="false"
             />
