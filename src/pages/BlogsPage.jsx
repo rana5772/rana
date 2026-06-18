@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useParams, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import axios from "axios";
 import Heading from "../components/Heading";
@@ -21,62 +25,101 @@ const categories = [
 const BlogsPage = () => {
   const { pageNumber } = useParams();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalPages, setTotalPages] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const currentPage = parseInt(pageNumber) || 1;
+
+  const selectedCategory =
+    searchParams.get("category") || "all";
 
   useEffect(() => {
     const fetchBlogs = async () => {
       setLoading(true);
+      setError(null);
+
       try {
         const catParam =
           selectedCategory !== "all"
             ? `&category=${encodeURIComponent(selectedCategory)}`
             : "";
+
         const { data } = await axios.get(
-          `https://blogs.rana.net.in/api/blogs/get-all?page=${currentPage}&limit=6${catParam}`,
+          `https://blogs.rana.net.in/api/blogs/get-all?page=${currentPage}&limit=6${catParam}`
         );
+
         setBlogs(data.blogs || []);
         setTotalPages(data.totalPages || 1);
-        if (data.totalPages > 0 && currentPage > data.totalPages)
-          navigate(`/blogs/page/1`, { replace: true });
+
+        if (
+          data.totalPages > 0 &&
+          currentPage > data.totalPages
+        ) {
+          const query =
+            selectedCategory !== "all"
+              ? `?category=${encodeURIComponent(selectedCategory)}`
+              : "";
+
+          navigate(`/blogs/page/1${query}`, {
+            replace: true,
+          });
+        }
       } catch {
         setError("Failed to load blogs :(");
       } finally {
         setLoading(false);
       }
     };
+
     fetchBlogs();
   }, [currentPage, selectedCategory, navigate]);
 
-  // Fix: Only navigate if NOT on page 1. This prevents the "scroll-to-top" jump.
   const handleCategoryChange = (cat) => {
-    setSelectedCategory(cat);
-    if (currentPage !== 1) navigate("/blogs/page/1");
+    const query =
+      cat !== "all"
+        ? `?category=${encodeURIComponent(cat)}`
+        : "";
+
+    navigate(`/blogs/page/1${query}`);
   };
 
   const handlePageChange = (page) => {
     if (page === currentPage) return;
-    navigate(`/blogs/page/${page}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    const query =
+      selectedCategory !== "all"
+        ? `?category=${encodeURIComponent(selectedCategory)}`
+        : "";
+
+    navigate(`/blogs/page/${page}${query}`);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <>
       <Helmet>
-        <title>{`Blogs - Page ${currentPage} | rana.net.in`}</title>
+        <title>
+          {selectedCategory === "all"
+            ? `Blogs - Page ${currentPage} | rana.net.in`
+            : `${selectedCategory} Blogs - Page ${currentPage} | rana.net.in`}
+        </title>
       </Helmet>
+
       <Heading heading="Read our Blogs" />
       <GlassBox text="Latest tech News." />
 
       <div className="text-center mb-12">
         <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-          Discover our latest insights, stories, and updates to help you stay
-          informed and inspired.
+          Discover our latest insights, stories, and updates to
+          help you stay informed and inspired.
         </p>
       </div>
 
@@ -98,14 +141,24 @@ const BlogsPage = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {loading ? (
-          [...Array(6)].map((_, i) => <BlogSkeleton key={i} />)
+          [...Array(6)].map((_, i) => (
+            <BlogSkeleton key={i} />
+          ))
         ) : error ? (
           <div className="col-span-full uppercase text-[18px] text-center py-10 text-rose-500">
             {error}
           </div>
+        ) : blogs.length === 0 ? (
+          <div className="col-span-full uppercase text-[18px] text-center py-10 text-gray-500">
+            No blogs found
+          </div>
         ) : (
           blogs.map((post, index) => (
-            <BlogCard key={post._id} post={post} index={index} />
+            <BlogCard
+              key={post._id}
+              post={post}
+              index={index}
+            />
           ))
         )}
       </div>
@@ -114,23 +167,33 @@ const BlogsPage = () => {
         <div className="flex justify-center items-center space-x-2 mt-12 mb-8">
           <button
             disabled={currentPage === 1}
-            onClick={() => handlePageChange(currentPage - 1)}
+            onClick={() =>
+              handlePageChange(currentPage - 1)
+            }
             className="px-4 py-2 border rounded-lg disabled:opacity-30"
           >
             <GrFormPrevious className="inline" /> Prev
           </button>
+
           {[...Array(totalPages)].map((_, i) => (
             <button
               key={i}
               onClick={() => handlePageChange(i + 1)}
-              className={`px-4 py-2 rounded-sm border ${currentPage === i + 1 ? "gradient-bg text-white" : "bg-white"}`}
+              className={`px-4 py-2 rounded-sm border ${
+                currentPage === i + 1
+                  ? "gradient-bg text-white"
+                  : "bg-white"
+              }`}
             >
               {i + 1}
             </button>
           ))}
+
           <button
             disabled={currentPage === totalPages}
-            onClick={() => handlePageChange(currentPage + 1)}
+            onClick={() =>
+              handlePageChange(currentPage + 1)
+            }
             className="px-4 py-2 border rounded-lg disabled:opacity-30"
           >
             Next <GrFormNext className="inline" />
