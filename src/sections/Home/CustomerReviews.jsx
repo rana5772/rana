@@ -193,14 +193,14 @@ export default function CustomerReviews() {
       </div>
 
       {/* Pagination */}
-      <div className="flex gap-3 mt-5">
+      <div className="flex gap-4 mt-5">
         {testimonials.map((_, i) => (
           <button
             key={i}
             aria-label={`Go to testimonial ${i + 1}`}
             aria-pressed={i === activeIndex}
             onClick={() => setActiveIndex(i)}
-            className={`h-2 transition-all rounded-full ${i === activeIndex ? "blue-bg w-8" : "bg-white w-2"
+            className={`h-3 w-3 transition-all rounded-full ${i === activeIndex ? "blue-bg w-8" : "bg-white w-2"
               }`}
           />
         ))}
