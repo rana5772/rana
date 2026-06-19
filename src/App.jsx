@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, lazy, Suspense } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // 1. Import AOS library and styles
@@ -10,19 +10,19 @@ import transitionSound from "./assets/sound.mp3";
 // Layout components
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
+import ChatBot from "./layouts/ChatBot";
 
 // Page components
-import HomePage from "./pages/HomePage";
-import BlogsPage from "./pages/BlogsPage";
-import ContactPage from "./pages/ContactPage";
-import FAQsPage from "./pages/FAQsPage";
-import PricingPage from "./pages/PricingPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import AboutPage from "./pages/AboutPage";
-import ChatBot from "./layouts/ChatBot";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TnC from "./pages/TnC";
-import BlogDetailsPage from "./pages/BlogDetailsPage";
+const HomePage = lazy(() => import("./pages/HomePage"));
+const BlogsPage = lazy(() => import("./pages/BlogsPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const FAQsPage = lazy(() => import("./pages/FAQsPage"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TnC = lazy(() => import("./pages/TnC"));
+const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
 
 function App() {
   const location = useLocation();
@@ -57,31 +57,35 @@ function App() {
       <ChatBot />
       <main className="min-h-screen">
         <div className="max-w-screen-xl px-4 pt-10 md:pt-16 mx-auto">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route
-              path="/blogs"
-              element={<Navigate to="/blogs/page/1" replace />}
-            />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/pricing" element={<PricingPage />} />
 
-            <Route
-              path="/blogs/page/:pageNumber"
-              element={<BlogsPage />}
-            />
+              <Route
+                path="/blogs"
+                element={<Navigate to="/blogs/page/1" replace />}
+              />
 
-            <Route
-              path="/blog/:slug"
-              element={<BlogDetailsPage />}
-            />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/faqs" element={<FAQsPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-&-conditions" element={<TnC />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+              <Route
+                path="/blogs/page/:pageNumber"
+                element={<BlogsPage />}
+              />
+
+              <Route
+                path="/blog/:slug"
+                element={<BlogDetailsPage />}
+              />
+
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/faqs" element={<FAQsPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-&-conditions" element={<TnC />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
         </div>
       </main>
       <Footer />
