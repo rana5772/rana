@@ -98,7 +98,9 @@ function LaptopSection() {
                 src={laptop}
                 draggable="false"
                 className="select-none"
-                alt=""
+                alt="Laptop"
+                loading="eager"
+                fetchPriority="high"
               />
 
               <div
