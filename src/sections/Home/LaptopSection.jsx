@@ -5,11 +5,9 @@ import Typewriter from "./Typewriter";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import { RiMailSendFill } from "react-icons/ri";
-import Loader from "./Loader";
 
 function LaptopSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const touchStartPos = useRef(0);
   const minSwipeDistance = 50;
@@ -29,8 +27,10 @@ function LaptopSection() {
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
   const goToSlide = (index) => setCurrentSlide(index);
 
   const handleStart = (clientX) => {
@@ -50,11 +50,7 @@ function LaptopSection() {
 
   return (
     <section>
-      {!isImageLoaded && <Loader />}
-
-      <div
-        className={`max-w-6xl mt-20 mx-auto px-4 sm:px-6 relative transition-opacity duration-500 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
-      >
+      <div className="max-w-6xl mt-20 mx-auto px-4 sm:px-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
           <div className="text-center lg:text-left order-2 lg:order-1">
             <h1 className="animated-header font-architects-daughter">
@@ -62,6 +58,7 @@ function LaptopSection() {
                 We specialize in
               </span>
             </h1>
+
             <div className="mt-2 main-heading text-gray-800 font-semibold new-font mb-8">
               <div className="md:text-5xl text-3xl">
                 <Typewriter />
@@ -75,6 +72,7 @@ function LaptopSection() {
               >
                 View Projects <FaArrowRight />
               </Link>
+
               <Link
                 to="/contact"
                 id="round"
@@ -100,9 +98,9 @@ function LaptopSection() {
                 src={laptop}
                 draggable="false"
                 className="select-none"
-                alt="Laptop"
-                onLoad={() => setIsImageLoaded(true)}
+                alt=""
               />
+
               <div
                 id="slide"
                 className="absolute select-none inset-0 flex flex-col items-center justify-evenly pb-3 text-center overflow-hidden text-xl primary-text bg-white transition-opacity duration-1000 ease-in-out"
@@ -110,22 +108,24 @@ function LaptopSection() {
                 <h3 className="sm:text-4xl text-2xl new-font text-gradient">
                   {slides[currentSlide].title}
                 </h3>
+
                 <i
                   className={`bi text-gradient ${slides[currentSlide].icon} text-5xl sm:text-6xl`}
                 ></i>
+
                 <div className="sm:text-xl text-[15px] new-font text-gradient font-[450]">
                   {slides[currentSlide].text}
                 </div>
               </div>
             </div>
 
-            {/* Next/Prev Buttons - Responsive & Styled */}
             <button
               onClick={prevSlide}
               className="hidden lg:flex absolute text-xl select-none h-10 w-10 justify-center items-center left-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800/40 hover:bg-gray-800 p-2 rounded-full transition-all shadow-md"
             >
               <MdSkipPrevious />
             </button>
+
             <button
               onClick={nextSlide}
               className="hidden lg:flex absolute text-xl select-none h-10 w-10 justify-center items-center right-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800/40 hover:bg-gray-800 p-2 rounded-full transition-all shadow-md"
@@ -133,13 +133,13 @@ function LaptopSection() {
               <MdSkipNext />
             </button>
 
-            {/* Indicator Dots */}
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-3 flex space-x-2">
               {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-8 h-3 rounded-full transition-all ${currentSlide === index ? "blue-bg" : "bg-gray-700"}`}
+                  className={`w-8 h-3 rounded-full transition-all ${currentSlide === index ? "blue-bg" : "bg-gray-700"
+                    }`}
                 />
               ))}
             </div>

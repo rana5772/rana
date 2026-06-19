@@ -43,11 +43,9 @@
 
 .main-heading {
   font-family: "Bricolage Grotesque", sans-serif;
-  background: linear-gradient(
-    to bottom,
-    var(--heading-gradient-from),
-    var(--heading-gradient-to)
-  );
+  background: linear-gradient(to bottom,
+      var(--heading-gradient-from),
+      var(--heading-gradient-to));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -57,9 +55,15 @@
 }
 
 /* laptop */
+.laptop {
+  width: 100%;
+  aspect-ratio: 1.69;
+  position: relative;
+}
+
 .laptop img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 #slide {
@@ -95,15 +99,18 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
+
 .animate-marquee-loop {
   animation: marquee 40s linear infinite;
   display: flex;
   width: max-content;
 }
+
 .pause-marquee:hover {
   animation-play-state: paused;
 }
