@@ -1,10 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-const laptop = "/images/laptop.png";
 import Typewriter from "./Typewriter";
+
+const laptop = "/images/laptop.png";
+
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaShoppingCart, FaBook } from "react-icons/fa";
 import { RiMailSendFill } from "react-icons/ri";
+import { IoSearch } from "react-icons/io5";
 
 function LaptopSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,15 +16,19 @@ function LaptopSection() {
   const minSwipeDistance = 50;
 
   const slides = [
-    { title: "e-commerce", icon: "bi-cart", text: "Sell your products online" },
+    {
+      title: "e-commerce",
+      icon: <FaShoppingCart className="text-5xl sm:text-6xl text-gradient" />,
+      text: "Sell your products online",
+    },
     {
       title: "Blogs",
-      icon: "bi-search",
+      icon: <IoSearch className="text-5xl sm:text-6xl text-gradient" />,
       text: "Blogs for better SEO performance",
     },
     {
       title: "Courses",
-      icon: "bi-book",
+      icon: <FaBook className="text-5xl sm:text-6xl text-gradient" />,
       text: "Launch & Sell your online courses",
     },
   ];
@@ -39,6 +46,7 @@ function LaptopSection() {
 
   const handleEnd = (clientX) => {
     const distance = touchStartPos.current - clientX;
+
     if (distance > minSwipeDistance) nextSlide();
     if (distance < -minSwipeDistance) prevSlide();
   };
@@ -111,9 +119,7 @@ function LaptopSection() {
                   {slides[currentSlide].title}
                 </h3>
 
-                <i
-                  className={`bi text-gradient ${slides[currentSlide].icon} text-5xl sm:text-6xl`}
-                ></i>
+                {slides[currentSlide].icon}
 
                 <div className="sm:text-xl text-[15px] new-font text-gradient font-[450]">
                   {slides[currentSlide].text}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Send, MapPin, Mail, Phone, Globe } from "lucide-react";
+import { MdPhone, MdEmail } from "react-icons/md";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import GradientButton from "../../components/GradientButton";
 import Heading from "../../components/Heading";
 
@@ -18,16 +19,13 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 1. Prepare the email content
     const subject = encodeURIComponent("Website Development Enquiry");
     const body = encodeURIComponent(
-      `Name: ${formData.fullName}\nPhone: ${formData.phone}\nMessage: ${formData.message}`,
+      `Name: ${formData.fullName}\nPhone: ${formData.phone}\nMessage: ${formData.message}`
     );
 
-    // 2. Trigger the mailto redirect
     window.location.href = `mailto:vaibhav.1098@hotmail.com?subject=${subject}&body=${body}`;
 
-    // 3. Clear the form fields after submission
     setFormData({
       fullName: "",
       phone: "",
@@ -36,14 +34,14 @@ const ContactSection = () => {
   };
 
   return (
-    <div className="max-w-6xl mt-20 max-lg:max-w-3xl mx-auto rounded-md bg-white/50 backdrop-blue-2xl ">
+    <div className="max-w-6xl mt-20 max-lg:max-w-3xl mx-auto rounded-md bg-white/50 backdrop-blue-2xl">
       <div className="grid lg:grid-cols-2 lg:gap-14 gap-5 items-center relative overflow-hidden p-8 rounded-md before-gradient-bg before:absolute before:right-0 before:w-[300px] before:h-full max-lg:before:hidden [box-shadow:0_2px_10px_-3px_var(--shadow-primary)]">
         <div>
           <Heading heading="Let's Connect" mt={false} underline={false} />
 
           <div className="text-[15px] text-center flex justify-center items-center gap-5 text-slate-600 leading-relaxed mb-6">
             <div>
-              <i className="bi bi-telephone-forward mr-2"></i>
+              <MdPhone className="inline mr-2" />
               <a
                 href="tel:+9311650067"
                 className="underline hover:text-slate-900 transition-colors"
@@ -51,8 +49,9 @@ const ContactSection = () => {
                 9311650067
               </a>
             </div>
+
             <div>
-              <i className="bi bi-envelope mr-2"></i>
+              <MdEmail className="inline mr-2" />
               <a
                 href="mailto:vaibhav.1098@hotmail.com"
                 className="underline hover:text-slate-900 transition-colors"
@@ -101,9 +100,10 @@ const ContactSection = () => {
           {/* Detailed Contact Info */}
           <div className="text-gray-800 border mt-5 border-gray-500/50 rounded-xl p-5">
             <p className="font-medium new-font flex items-center gap-2">
-              <i className="bi bi-geo-alt-fill primary-text"></i>
+              <FaMapMarkerAlt className="primary-text" />
               Nagad Computer Wholesalers
             </p>
+
             <p className="text-sm opacity-75">
               Shikrapur, Maharashtra 412208, India
             </p>

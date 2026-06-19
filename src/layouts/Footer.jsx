@@ -1,6 +1,15 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { MdKeyboardDoubleArrowUp } from "react-icons/md";
+import {
+  MdKeyboardDoubleArrowUp,
+  MdEmail,
+  MdPhone,
+} from "react-icons/md";
+import {
+  FaWhatsapp,
+  FaLinkedin,
+  FaDatabase,
+} from "react-icons/fa";
 
 const logo = "/images/logo.png";
 
@@ -15,6 +24,25 @@ function Footer() {
     { name: "Pricing", path: "/pricing" },
     { name: "Contact", path: "/contact" },
     { name: "FAQs", path: "/faqs" },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <MdPhone />,
+      href: "tel:9311650067",
+    },
+    {
+      icon: <FaWhatsapp />,
+      href: "https://wa.link/lhr0lo",
+    },
+    {
+      icon: <MdEmail />,
+      href: "mailto:vaibhav.1098@hotmail.com",
+    },
+    {
+      icon: <FaLinkedin />,
+      href: "https://www.linkedin.com/in/vaibhav-rana-profile",
+    },
   ];
 
   return (
@@ -81,14 +109,13 @@ function Footer() {
                         const active =
                           isActive ||
                           (link.matchPrefix &&
-                            location.pathname.startsWith(
-                              link.matchPrefix
-                            ));
+                            location.pathname.startsWith(link.matchPrefix));
 
-                        return `inline-block transition-all duration-200 hover:translate-x-2 ${active
+                        return `inline-block transition-all duration-200 hover:translate-x-2 ${
+                          active
                             ? "text-[var(--primary)] font-medium"
                             : "text-gray-900 link-primary"
-                          }`;
+                        }`;
                       }}
                     >
                       → {link.name}
@@ -104,6 +131,7 @@ function Footer() {
                 <h6 className="text-gray-900 new-font font-medium mb-2 text-[15px]">
                   Frontend Techstack
                 </h6>
+
                 <ul className="text-gray-800 space-y-1">
                   <li>React.jsx</li>
                   <li>NEXT.js</li>
@@ -116,6 +144,7 @@ function Footer() {
                 <h6 className="text-gray-900 new-font font-medium mb-2 text-[15px]">
                   Backend Techstack
                 </h6>
+
                 <ul className="text-gray-800 space-y-1">
                   <li>Node.js</li>
                   <li>Express.js</li>
@@ -124,9 +153,10 @@ function Footer() {
               </div>
 
               <div className="text-sm">
-                <h6 className="text-gray-900 new-font font-medium mb-2 text-[15px]">
-                  Database <i className="bi bi-database-fill"></i>
+                <h6 className="text-gray-900 new-font font-medium mb-2 text-[15px] flex items-center gap-2">
+                  Database <FaDatabase />
                 </h6>
+
                 <ul className="text-gray-800 space-y-1">
                   <li>MongoDB</li>
                   <li>MySQL</li>
@@ -139,18 +169,7 @@ function Footer() {
           {/* Bottom section */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-center sm:text-left border-t border-gray-800 pt-8">
             <ul className="flex justify-center mb-4 sm:order-1 sm:ml-4 sm:mb-0">
-              {[
-                { icon: "bi-telephone-plus", href: "tel:9311650067" },
-                { icon: "bi-whatsapp", href: "https://wa.link/lhr0lo" },
-                {
-                  icon: "bi-envelope",
-                  href: "mailto:vaibhav.1098@hotmail.com",
-                },
-                {
-                  icon: "bi-linkedin",
-                  href: "https://www.linkedin.com/in/vaibhav-rana-profile",
-                },
-              ].map((social, idx) => (
+              {socialLinks.map((social, idx) => (
                 <li key={idx} className="ml-4 first:ml-0">
                   <a
                     href={social.href}
@@ -158,7 +177,7 @@ function Footer() {
                     rel="noopener noreferrer"
                     className="flex justify-center items-center text-2xl glass-dark hover:scale-110 w-10 h-10 rounded-lg transition-all"
                   >
-                    <i className={`bi ${social.icon}`}></i>
+                    {social.icon}
                   </a>
                 </li>
               ))}
