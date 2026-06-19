@@ -30,18 +30,22 @@ function Footer() {
     {
       icon: <MdPhone />,
       href: "tel:9311650067",
+      ariaLabel: "Call us",
     },
     {
       icon: <FaWhatsapp />,
       href: "https://wa.link/lhr0lo",
+      ariaLabel: "Chat on WhatsApp",
     },
     {
       icon: <MdEmail />,
       href: "mailto:vaibhav.1098@hotmail.com",
+      ariaLabel: "Send email",
     },
     {
       icon: <FaLinkedin />,
       href: "https://www.linkedin.com/in/vaibhav-rana-profile",
+      ariaLabel: "Visit LinkedIn profile",
     },
   ];
 
@@ -111,11 +115,10 @@ function Footer() {
                           (link.matchPrefix &&
                             location.pathname.startsWith(link.matchPrefix));
 
-                        return `inline-block transition-all duration-200 hover:translate-x-2 ${
-                          active
-                            ? "text-[var(--primary)] font-medium"
-                            : "text-gray-900 link-primary"
-                        }`;
+                        return `inline-block transition-all duration-200 hover:translate-x-2 ${active
+                          ? "text-[var(--primary)] font-medium"
+                          : "text-gray-900 link-primary"
+                          }`;
                       }}
                     >
                       → {link.name}
@@ -175,6 +178,7 @@ function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={social.ariaLabel}
                     className="flex justify-center items-center text-2xl glass-dark hover:scale-110 w-10 h-10 rounded-lg transition-all"
                   >
                     {social.icon}
