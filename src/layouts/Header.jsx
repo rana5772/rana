@@ -67,7 +67,7 @@ const Header = () => {
           >
             <img
               src={logo}
-              alt="logo" 
+              alt="logo"
               className="inline-block select-none h-[30px]"
               draggable="false"
             />
@@ -93,6 +93,9 @@ const Header = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMenu}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
               className="text-3xl text-gray-800 p-1 focus:outline-none"
             >
               {isOpen ? <HiX /> : <TbMenu2 />}

@@ -129,6 +129,7 @@ function LaptopSection() {
 
             <button
               onClick={prevSlide}
+              aria-label="Previous slide"
               className="hidden lg:flex absolute text-xl select-none h-10 w-10 justify-center items-center left-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800/40 hover:bg-gray-800 p-2 rounded-full transition-all shadow-md"
             >
               <MdSkipPrevious />
@@ -136,6 +137,7 @@ function LaptopSection() {
 
             <button
               onClick={nextSlide}
+              aria-label="Next slide"
               className="hidden lg:flex absolute text-xl select-none h-10 w-10 justify-center items-center right-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800/40 hover:bg-gray-800 p-2 rounded-full transition-all shadow-md"
             >
               <MdSkipNext />
@@ -145,6 +147,7 @@ function LaptopSection() {
               {slides.map((_, index) => (
                 <button
                   key={index}
+                  aria-label={`Go to slide ${index + 1}`}
                   onClick={() => goToSlide(index)}
                   className={`w-8 h-3 rounded-full transition-all ${currentSlide === index ? "blue-bg" : "bg-gray-700"
                     }`}

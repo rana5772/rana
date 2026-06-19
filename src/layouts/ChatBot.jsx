@@ -82,7 +82,7 @@ const ChatBot = () => {
     try {
       // Format messages for API (excluding system messages if any)
       const apiMessages = messages.concat(userMessage).filter(m => m.role !== "system");
-      
+
       const response = await fetch(API_URL, {
         method: "POST",
         headers: {
@@ -96,20 +96,20 @@ const ChatBot = () => {
       }
 
       const data = await response.json();
-      
-      const botMessage = { 
-        role: "assistant", 
-        content: data.reply || "Sorry, I couldn't process that." 
+
+      const botMessage = {
+        role: "assistant",
+        content: data.reply || "Sorry, I couldn't process that."
       };
-      
+
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error("Chat error:", error);
       setMessages((prev) => [
         ...prev,
-        { 
-          role: "assistant", 
-          content: "Sorry, I'm having trouble connecting. Please try again later." 
+        {
+          role: "assistant",
+          content: "Sorry, I'm having trouble connecting. Please try again later."
         }
       ]);
     } finally {
@@ -122,6 +122,9 @@ const ChatBot = () => {
       {/* Chat Button */}
       <button
         ref={buttonRef}
+        aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
+        aria-expanded={isOpen}
+        aria-controls="chatbot-panel"
         onClick={() => setIsOpen(!isOpen)}
         className="fixed flex justify-center items-center text-primary bg-white bottom-5 right-5 aspect-square w-16 md:w-20 border border-black/50 z-[100000000] rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
       >
@@ -131,7 +134,10 @@ const ChatBot = () => {
       {/* Chat Window */}
       {isOpen && (
         <div
+          id="chatbot-panel"
           ref={chatRef}
+          role="dialog"
+          aria-label="AI Chat Assistant"
           className="fixed bottom-24 right-5 w-80 md:w-96 h-[500px] bg-white rounded-lg shadow-2xl border border-black/50 z-[100000000] flex flex-col overflow-hidden"
         >
           {/* Header */}
@@ -152,16 +158,14 @@ const ChatBot = () => {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex ${
-                  message.role === "user" ? "justify-end" : "justify-start"
-                }`}
+                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"
+                  }`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
-                    message.role === "user"
-                      ? "gradient-bg text-white rounded-br-none"
-                      : "bg-gray-100 text-gray-800 rounded-bl-none"
-                  }`}
+                  className={`max-w-[80%] p-3 rounded-lg ${message.role === "user"
+                    ? "gradient-bg text-white rounded-br-none"
+                    : "bg-gray-100 text-gray-800 rounded-bl-none"
+                    }`}
                 >
                   <p className="text-sm whitespace-pre-wrap break-words">
                     {message.content}
@@ -169,7 +173,7 @@ const ChatBot = () => {
                 </div>
               </div>
             ))}
-            
+
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-gray-100 text-gray-800 p-3 rounded-lg rounded-bl-none">
@@ -188,6 +192,7 @@ const ChatBot = () => {
           <form onSubmit={handleSendMessage} className="border-t p-3 flex gap-2">
             <input
               ref={inputRef}
+              aria-label="Type your message"
               type="text"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
@@ -198,6 +203,7 @@ const ChatBot = () => {
             <button
               type="submit"
               disabled={isLoading || !inputMessage.trim()}
+              aria-label="Send message"
               className="gradient-bg text-white p-2 rounded-md hover:gradient-bg/90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send size={20} />
