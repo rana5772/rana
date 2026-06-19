@@ -178,12 +178,14 @@ export default function CustomerReviews() {
         {/* Desktop Navigation */}
         <button
           onClick={prevSlide}
+          aria-label="Previous testimonial"
           className="hidden md:flex absolute -left-12 z-40 p-3 bg-white shadow-lg rounded-full text-slate-400 hover-primary-text transition"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={nextSlide}
+          aria-label="Next testimonial"
           className="hidden md:flex absolute -right-12 z-40 p-3 bg-white shadow-lg rounded-full text-slate-400 hover-primary-text transition"
         >
           <ChevronRight size={24} />
@@ -195,8 +197,11 @@ export default function CustomerReviews() {
         {testimonials.map((_, i) => (
           <button
             key={i}
+            aria-label={`Go to testimonial ${i + 1}`}
+            aria-pressed={i === activeIndex}
             onClick={() => setActiveIndex(i)}
-            className={`h-2 transition-all rounded-full ${i === activeIndex ? "blue-bg w-8" : "bg-white w-2"}`}
+            className={`h-2 transition-all rounded-full ${i === activeIndex ? "blue-bg w-8" : "bg-white w-2"
+              }`}
           />
         ))}
       </div>

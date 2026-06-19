@@ -7,13 +7,14 @@ import GlassBox from "../../components/GlassBox";
 import MarqueeSection from "./MarqueeSection";
 
 const logos = [
-  "/images/logos/1.svg",
-  "/images/logos/2.svg",
-  "/images/logos/3.svg",
-  "/images/logos/5.svg",
-  "/images/logos/6.svg",
-  "/images/logos/7.svg",
-  "/images/logos/8.svg",
+  { src: "/images/logos/1.svg", alt: "React.js logo" },
+  { src: "/images/logos/2.svg", alt: "Tailwind CSS logo" },
+  { src: "/images/logos/3.svg", alt: "Redux logo" },
+  { src: "/images/logos/4.svg", alt: "Node.js logo" },
+  { src: "/images/logos/5.svg", alt: "Express.js logo" },
+  { src: "/images/logos/6.svg", alt: "MongoDB logo" },
+  { src: "/images/logos/7.svg", alt: "SQL database logo" },
+  { src: "/images/logos/8.svg", alt: "Firebase logo" },
 ];
 
 const TechStackSection = () => {
