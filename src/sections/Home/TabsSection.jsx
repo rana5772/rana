@@ -66,12 +66,12 @@ const TabsSection = () => {
             return (
               <button
                 key={feature.id}
+                aria-label={`Show ${feature.title} section`}
                 onClick={() => setActiveTab(index)}
-                className={`p-2 rounded-xl transition-all duration-300 cursor-pointer ${
-                  isActive
+                className={`p-2 rounded-xl transition-all duration-300 cursor-pointer ${isActive
                     ? "blue-bg text-white shadow-lg scale-110"
                     : "text-slate-400 hover-primary-text hover:bg-white"
-                }`}
+                  }`}
               >
                 {feature.icon}
               </button>
