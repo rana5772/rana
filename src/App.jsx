@@ -57,7 +57,13 @@ function App() {
       <ChatBot />
       <main className="min-h-screen">
         <div className="max-w-screen-xl px-4 pt-10 md:pt-16 mx-auto">
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div className="min-h-screen flex justify-center items-center">
+                <div className="animate-pulse">Loading...</div>
+              </div>
+            }
+          >
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
