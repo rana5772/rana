@@ -5,9 +5,11 @@ import Typewriter from "./Typewriter";
 const laptop = "/images/laptop.png";
 
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
-import { FaArrowRight, FaShoppingCart, FaBook } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { RiMailSendFill } from "react-icons/ri";
-import { IoSearch } from "react-icons/io5";
+import SearchIcon from "../../components/molecules/SearchIcon";
+import BoardIcon from "../../components/molecules/BoardIcon";
+import CartIcon from "../../components/molecules/CartIcon";
 
 function LaptopSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,17 +20,17 @@ function LaptopSection() {
   const slides = [
     {
       title: "e-commerce",
-      icon: <FaShoppingCart className="text-5xl sm:text-6xl" />,
+      icon: <CartIcon size={64} />,
       text: "Sell your products online",
     },
     {
       title: "Blogs",
-      icon: <IoSearch className="text-5xl sm:text-6xl" />,
+      icon: <SearchIcon size={64} />,
       text: "Blogs for better SEO performance",
     },
     {
       title: "Courses",
-      icon: <FaBook className="text-5xl sm:text-6xl" />,
+      icon: <BoardIcon size={64} />,
       text: "Launch & Sell your online courses",
     },
   ];

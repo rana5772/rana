@@ -10,6 +10,7 @@ import HeroSection from "../sections/Home/HeroSection";
 import TimelineSection from "../sections/Home/TimelineSection";
 import TabsSection from "../sections/Home/TabsSection";
 import ImagesSection from "../sections/Home/ImagesSection";
+import BoardIcon from "../components/molecules/BoardIcon";
 
 const HomePage = () => {
   return (
