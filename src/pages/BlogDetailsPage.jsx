@@ -74,7 +74,6 @@ const BlogDetailsPage = () => {
           </p>
 
           <div className="flex justify-center items-center">
-
             <button
               onClick={() => navigate("/blogs/page/1")}
               className="w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
@@ -129,7 +128,10 @@ const BlogDetailsPage = () => {
           <div className="flex justify-center items-center gap-5">
 
             <div className="flex justify">
-              <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline">
+              <button
+                onClick={() => navigate(-1)}
+                aria-label="Go back"
+                className="text-blue-600 hover:underline">
                 <FaArrowCircleLeft className="text-3xl text-black" />
               </button>
             </div>
@@ -176,6 +178,17 @@ const BlogDetailsPage = () => {
 
         </div>
       </article>
+
+      <div className="flex justify-center items-center">
+        <button
+          onClick={() => navigate("/blogs/page/1")}
+          className="w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
+        >
+          <FaArrowLeft />
+          Back to Blogs
+        </button>
+      </div>
+
     </>
   );
 };

@@ -59,7 +59,7 @@ function App() {
         <div className="max-w-screen-xl px-4 pt-10 md:pt-16 mx-auto">
           <Suspense
             fallback={
-              <div className="min-h-screen flex justify-center items-center">
+              <div className="min-h-screen flex text-3xl justify-center items-center">
                 <div className="animate-pulse">Loading...</div>
               </div>
             }
