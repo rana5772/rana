@@ -181,7 +181,7 @@ const BlogDetailsPage = () => {
 
       <div className="flex justify-center items-center">
         <button
-          onClick={() => navigate("/blogs/page/1")}
+          onClick={() => navigate(-1)}
           className="w-auto px-8 py-3 rounded-full flex justify-center items-center gap-3 hover:scale-105 gradient-bg text-white transition-all shadow-lg"
         >
           <FaArrowLeft />
