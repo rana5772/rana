@@ -101,11 +101,11 @@ const ContactSection = () => {
           <div className="text-gray-800 border mt-5 border-gray-500/50 rounded-xl p-5">
             <p className="font-medium new-font flex items-center gap-2">
               <FaMapMarkerAlt className="primary-text" />
-              Nagad Computer Wholesalers
+              Delhi, India
             </p>
 
             <p className="text-sm opacity-75">
-              Shikrapur, Maharashtra 412208, India
+              Serving clients across India.
             </p>
           </div>
         </div>
@@ -113,12 +113,12 @@ const ContactSection = () => {
         {/* Map Container */}
         <div className="z-10 relative h-full min-h-[450px] rounded-lg overflow-hidden shadow-inner border border-slate-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.6433544605156!2d74.1135!3d18.6675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQwJzAzLjAiTiA3NMKwMDYnNDguNiJF!5e0!3m2!1sen!2sin!4v1645000000000"
+            src="https://maps.google.com/maps?q=Delhi,India&t=&z=11&ie=UTF8&iwloc=&output=embed"
             className="absolute inset-0 h-full w-full"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
-            title="Nagad Computers Location"
+            title="Delhi, India"
           ></iframe>
         </div>
       </div>

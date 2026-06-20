@@ -56,8 +56,7 @@ const TnC = () => {
                 3. Payments & Pricing
               </h2>
               <p>
-                All project costs are based on the specific plan selected (e.g.,
-                Portfolio Site at ₹5,000/- or Advanced E-commerce at ₹16,000/-).
+                All project costs are based on the specific plan selected.
                 Payments are processed via secure gateways. Services are
                 non-refundable once the development phase has officially
                 commenced.
@@ -100,7 +99,7 @@ const TnC = () => {
               </p>
             </section>
 
-            <section className="pt-6 border-t border-gray-100">
+            <section className="pt-6 border-t border-gray-400">
               <h2 className="text-xl font-semibold text-gray-900 mb-3">
                 Contact Information
               </h2>
@@ -108,9 +107,7 @@ const TnC = () => {
                 Questions about the Terms and Conditions should be sent to us
                 at: <br />
                 <strong>Email:</strong> vaibhav.1098@hotmail.com <br />
-                <strong>Phone:</strong> +91 9311650067 <br />
-                <strong>Address:</strong> Nagad Computer Wholesalers, Shikrapur,
-                Maharashtra 412208, India.
+                <strong>Phone:</strong> +91 9311650067
               </p>
             </section>
           </div>

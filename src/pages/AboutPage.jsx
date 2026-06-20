@@ -6,8 +6,12 @@ import GlassBox from "../components/GlassBox";
 import ServiceSection from "../sections/About/ServiceSection";
 import Typing from "../sections/About/Typing";
 import { ElfsightWidget } from "react-elfsight-widget";
+import GradientButton from "../components/GradientButton";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Helmet>
@@ -55,7 +59,17 @@ const About = () => {
 
         <ServiceSection />
 
-        <ElfsightWidget widgetID="4aff476c-65e8-44f4-8bf7-5524bb84196c" lazy />
+        <p className=" text-center mb-5 max-w-screen-lg mx-auto text-gray-800">
+          Have an idea, challenge, or project in mind? We're here to help. Share your requirements with us, and our team will provide expert guidance and a tailored solution to help you achieve your goals.
+        </p>
+        <div className="flex justify-center items-center">
+          <GradientButton
+            text="Let's Connect"
+            onClick={() => navigate("/contact")}
+          />
+        </div>
+
+        {/* <ElfsightWidget widgetID="4aff476c-65e8-44f4-8bf7-5524bb84196c" lazy /> */}
       </div>
     </>
   );

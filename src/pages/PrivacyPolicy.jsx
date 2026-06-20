@@ -107,7 +107,7 @@ const PrivacyPolicy = () => {
               </p>
             </section>
 
-            <section className="pt-6 border-t border-gray-100">
+            <section className="pt-6 border-t border-gray-400">
               <h2 className="text-xl font-semibold text-gray-900 mb-3">
                 Contact Information
               </h2>
@@ -115,9 +115,7 @@ const PrivacyPolicy = () => {
                 Questions about the Terms and Conditions should be sent to us
                 at: <br />
                 <strong>Email:</strong> vaibhav.1098@hotmail.com <br />
-                <strong>Phone:</strong> +91 9311650067 <br />
-                <strong>Address:</strong> Nagad Computer Wholesalers, Shikrapur,
-                Maharashtra 412208, India.
+                <strong>Phone:</strong> +91 9311650067
               </p>
             </section>
           </div>

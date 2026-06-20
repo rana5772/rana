@@ -62,8 +62,8 @@ const ImagesSection = () => {
               <GlassBox my={false} text="Not an Agency" />
             </div>
             <p className="mt-6 text-lg leading-8 text-gray-600 mb-5">
-              Beyond the launch, we are your long-term allies. We provide a
-              lifetime of dedicated support and zero-cost maintenance to keep
+              Beyond the launch, we are your long-term allies. We provide
+              3-month dedicated support and zero-cost maintenance to keep
               your operations running flawlessly.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 w-full items-center">

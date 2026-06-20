@@ -159,22 +159,21 @@ const ContactPage = () => {
           <div className="text-gray-800 p-5">
             <p className="font-medium new-font flex items-center gap-2">
               <FaMapMarkerAlt className="primary-text" />
-              Nagad Computer Wholesalers
+              Delhi, India
             </p>
 
             <p className="text-sm opacity-75">
-              Shikrapur, Maharashtra 412208, India
+              Serving clients across India.
             </p>
           </div>
 
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.2731872159847!2d74.113!3d18.665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2cf7873426893%3A0x66f7f36965b9347a!2sShikrapur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000"
+            src="https://maps.google.com/maps?q=Delhi,India&t=&z=11&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="400"
             style={{ border: 0 }}
-            allowFullScreen
             loading="lazy"
-            title="Location Map"
+            title="Delhi, India"
           />
         </div>
       </div>

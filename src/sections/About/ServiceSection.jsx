@@ -19,7 +19,7 @@ const ServiceSection = () => {
           { label: "LMS Portals", color: "bg-orange-300" },
           { label: "Custom CRM", color: "bg-cyan-300" },
         ]}
-        description="Looking for a high-performance website that converts visitors into customers? rana.net.in is a premier web development agency in Delhi and Pune, dedicated to building fast, secure, and visually captivating websites. With over 5 years of experience, we specialize in turning complex requirements into seamless digital experiences.<br/><br/> Our expert team focuses on cutting-edge technologies to ensure your site is not just a digital business card, but a powerful growth engine. From startups to established enterprises, we provide end-to-end web solutions—including strategy, UI/UX design, and full-stack development—tailored to elevate your brand's online presence."
+        description="Looking for a high-performance website that converts visitors into customers? rana.net.in is a premier web development agency, dedicated to building fast, secure, and visually captivating websites. With over 5 years of experience, we specialize in turning complex requirements into seamless digital experiences.<br/><br/> Our expert team focuses on cutting-edge technologies to ensure your site is not just a digital business card, but a powerful growth engine. From startups to established enterprises, we provide end-to-end web solutions—including strategy, UI/UX design, and full-stack development—tailored to elevate your brand's online presence."
         features={[
           {
             title: "Advanced Admin Panel",
@@ -62,7 +62,7 @@ const ServiceSection = () => {
           { label: "Inventory App", color: "bg-orange-300" },
           { label: "Food Ordering App", color: "bg-cyan-300" },
         ]}
-        description="Are you looking for the most experienced designers and developers for your next digital project? If so, we are here to help. rana.net.in is a top-rated mobile app development company based in Delhi and Pune with over 5 years of industry experience. <br/><br/> We have built some of the most powerful and intuitive apps for our valued clients. Our deep expertise and dedicated in-house development team provide us an edge in delivering truly exceptional mobile applications. Whether you are an entrepreneur launching a new venture or you own an established business, we boast a talented team of app developers in Delhi and Pune to strategically plan, design, develop, and launch your mobile application—all with the goal of accelerating your business growth."
+        description="Are you looking for the most experienced designers and developers for your next digital project? If so, we are here to help. rana.net.in is a top-rated mobile app development company with over 5 years of industry experience. <br/><br/> We have built some of the most powerful and intuitive apps for our valued clients. Our deep expertise and dedicated in-house development team provide us an edge in delivering truly exceptional mobile applications. Whether you are an entrepreneur launching a new venture or you own an established business, we boast a talented team of app developers who strategically plan, design, develop, and launch your mobile application—all with the goal of accelerating your business growth."
         features={[
           {
             title: "Cross-Platfaorm Compatibility",
@@ -103,7 +103,7 @@ const ServiceSection = () => {
           { label: "UI/UX Prototyping", color: "bg-cyan-300" },
           { label: "Marketing Collateral", color: "bg-yellow-300" },
         ]}
-        description="A brand is more than just a logo—it's an emotion and a promise. At rana.net.in, we help businesses in Delhi and Pune find their unique voice through strategic visual storytelling. Our design philosophy blends aesthetics with psychology to create identities that resonate.<br/><br/>Whether you are a startup looking for your first logo or an established brand seeking a modern refresh, our creative team delivers high-impact visuals. We ensure your brand looks consistent and professional across every touchpoint, from Instagram to your office stationery."
+        description="A brand is more than just a logo—it's an emotion and a promise. At rana.net.in, we help businesses find their unique voice through strategic visual storytelling. Our design philosophy blends aesthetics with psychology to create identities that resonate.<br/><br/>Whether you are a startup looking for your first logo or an established brand seeking a modern refresh, our creative team delivers high-impact visuals. We ensure your brand looks consistent and professional across every touchpoint, from Instagram to your office stationery."
         features={[
           {
             title: "Custom Logo Design",
@@ -137,7 +137,7 @@ const ServiceSection = () => {
           { label: "Content Strategy", color: "bg-yellow-300" },
           { label: "Local SEO (GMB)", color: "bg-orange-300" },
         ]}
-        description="Visibility is the currency of the digital age. At rana.net.in, we don't just build websites; we ensure they are found by the right audience. Our SEO experts in Delhi and Pune use data-driven strategies to climb search engine rankings and stay there.<br/><br/>From auditing your technical foundation to crafting high-authority backlink profiles, we cover every aspect of search engine optimization. We focus on sustainable, white-hat techniques that drive organic traffic and increase your ROI without relying solely on paid ads."
+        description="Visibility is the currency of the digital age. At rana.net.in, we don't just build websites; we ensure they are found by the right audience. Our SEO experts use data-driven strategies to climb search engine rankings and stay there.<br/><br/>From auditing your technical foundation to crafting high-authority backlink profiles, we cover every aspect of search engine optimization. We focus on sustainable, white-hat techniques that drive organic traffic and increase your ROI without relying solely on paid ads."
         features={[
           {
             title: "Technical SEO Audit",
@@ -241,7 +241,7 @@ const ServiceSection = () => {
           { label: "Regression Testing", color: "bg-purple-300" },
           { label: "Bug Reporting", color: "bg-yellow-300" },
         ]}
-        description="A single bug can cost your business reputation and revenue. At rana.net.in, we ensure your software is bulletproof before it reaches your users. Our QA team in Delhi and Pune meticulously tests every button, form, and flow to ensure a flawless user experience.<br/><br/>We combine human intuition with machine precision. While our manual testers explore your app like a real user to find edge cases, our automation engineers write scripts that run thousands of tests in seconds, ensuring that new updates never break existing features."
+        description="A single bug can cost your business reputation and revenue. At rana.net.in, we ensure your software is bulletproof before it reaches your users. Our QA team meticulously tests every button, form, and flow to ensure a flawless user experience.<br/><br/>We combine human intuition with machine precision. While our manual testers explore your app like a real user to find edge cases, our automation engineers write scripts that run thousands of tests in seconds, ensuring that new updates never break existing features."
         features={[
           {
             title: "Automated Regression Suites",
