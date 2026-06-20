@@ -18,17 +18,17 @@ function LaptopSection() {
   const slides = [
     {
       title: "e-commerce",
-      icon: <FaShoppingCart className="text-5xl sm:text-6xl text-gradient" />,
+      icon: <FaShoppingCart className="text-5xl sm:text-6xl" />,
       text: "Sell your products online",
     },
     {
       title: "Blogs",
-      icon: <IoSearch className="text-5xl sm:text-6xl text-gradient" />,
+      icon: <IoSearch className="text-5xl sm:text-6xl" />,
       text: "Blogs for better SEO performance",
     },
     {
       title: "Courses",
-      icon: <FaBook className="text-5xl sm:text-6xl text-gradient" />,
+      icon: <FaBook className="text-5xl sm:text-6xl" />,
       text: "Launch & Sell your online courses",
     },
   ];
@@ -115,13 +115,15 @@ function LaptopSection() {
                 id="slide"
                 className="absolute select-none inset-0 flex flex-col items-center justify-evenly pb-3 text-center overflow-hidden text-xl primary-text bg-white transition-opacity duration-1000 ease-in-out"
               >
-                <h3 className="sm:text-4xl text-2xl new-font text-gradient">
+                <h3 className="sm:text-4xl text-2xl gradient-text new-font">
                   {slides[currentSlide].title}
                 </h3>
 
-                {slides[currentSlide].icon}
+                <div className="my-icon">
+                  {slides[currentSlide].icon}
+                </div>
 
-                <div className="sm:text-xl text-[15px] new-font text-gradient font-[450]">
+                <div className="sm:text-xl text-[15px]">
                   {slides[currentSlide].text}
                 </div>
               </div>

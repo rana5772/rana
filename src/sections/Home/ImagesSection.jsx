@@ -59,7 +59,7 @@ const ImagesSection = () => {
               mt={false}
             />
             <div className="flex justify-center lg:justify-start w-full">
-              <GlassBox my={false} text="Not an AGENCY" />
+              <GlassBox my={false} text="Not an Agency" />
             </div>
             <p className="mt-6 text-lg leading-8 text-gray-600 mb-5">
               Beyond the launch, we are your long-term allies. We provide a
