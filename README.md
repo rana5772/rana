@@ -1,7 +1,7 @@
 # Google Ads
 
 * automatic endpoint hitting
-* test it every day
 * date change
-* check on search console, react helmet, page speed
-* date sorting
+
+- test it every day
+- check on search console, react helmet, page speed

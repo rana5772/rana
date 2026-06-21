@@ -11,6 +11,7 @@ import Heading from "../components/Heading";
 import GlassBox from "../components/GlassBox";
 import BlogCard from "../components/BlogCard";
 import BlogSkeleton from "../components/BlogSkeleton";
+import { FaChevronDown } from "react-icons/fa";
 
 const categories = [
   "all",
@@ -20,6 +21,11 @@ const categories = [
   "technology",
   "ai automation",
   "general",
+];
+
+const sortOptions = [
+  { value: "latest", label: "Sort by : Latest" },
+  { value: "oldest", label: "Sort by : Oldest" },
 ];
 
 const BlogsPage = () => {
@@ -37,6 +43,8 @@ const BlogsPage = () => {
   const selectedCategory =
     searchParams.get("category") || "all";
 
+  const selectedSort = searchParams.get("sort") || "latest";
+
   useEffect(() => {
     const fetchBlogs = async () => {
       setLoading(true);
@@ -48,8 +56,10 @@ const BlogsPage = () => {
             ? `&category=${encodeURIComponent(selectedCategory)}`
             : "";
 
+        const sortParam = `&sort=${encodeURIComponent(selectedSort)}`;
+
         const { data } = await axios.get(
-          `https://blogs.rana.net.in/api/blogs/get-all?page=${currentPage}&limit=6${catParam}`
+          `https://blogs.rana.net.in/api/blogs/get-all?page=${currentPage}&limit=6${catParam}${sortParam}`
         );
 
         setBlogs(data.blogs || []);
@@ -59,10 +69,10 @@ const BlogsPage = () => {
           data.totalPages > 0 &&
           currentPage > data.totalPages
         ) {
-          const query =
-            selectedCategory !== "all"
-              ? `?category=${encodeURIComponent(selectedCategory)}`
-              : "";
+          const query = buildQuery({
+            category: selectedCategory,
+            sort: selectedSort,
+          });
 
           navigate(`/blogs/page/1${query}`, {
             replace: true,
@@ -76,24 +86,40 @@ const BlogsPage = () => {
     };
 
     fetchBlogs();
-  }, [currentPage, selectedCategory, navigate]);
+  }, [currentPage, selectedCategory, selectedSort, navigate]);
+
+  // Builds a query string from category/sort, omitting defaults ("all" / "latest")
+  const buildQuery = ({ category, sort }) => {
+    const params = new URLSearchParams();
+
+    if (category && category !== "all") {
+      params.set("category", category);
+    }
+    if (sort && sort !== "latest") {
+      params.set("sort", sort);
+    }
+
+    const qs = params.toString();
+    return qs ? `?${qs}` : "";
+  };
 
   const handleCategoryChange = (cat) => {
-    const query =
-      cat !== "all"
-        ? `?category=${encodeURIComponent(cat)}`
-        : "";
+    const query = buildQuery({ category: cat, sort: selectedSort });
+    navigate(`/blogs/page/1${query}`);
+  };
 
+  const handleSortChange = (sort) => {
+    const query = buildQuery({ category: selectedCategory, sort });
     navigate(`/blogs/page/1${query}`);
   };
 
   const handlePageChange = (page) => {
     if (page === currentPage) return;
 
-    const query =
-      selectedCategory !== "all"
-        ? `?category=${encodeURIComponent(selectedCategory)}`
-        : "";
+    const query = buildQuery({
+      category: selectedCategory,
+      sort: selectedSort,
+    });
 
     navigate(`/blogs/page/${page}${query}`);
 
@@ -105,7 +131,7 @@ const BlogsPage = () => {
 
   return (
     <>
-      <Helmet key={`${currentPage}-${selectedCategory}`}>
+      <Helmet key={`${currentPage}-${selectedCategory}-${selectedSort}`}>
         <title>
           {selectedCategory === "all"
             ? `Blogs - Page ${currentPage} | rana.net.in`
@@ -116,14 +142,38 @@ const BlogsPage = () => {
       <Heading heading="Read our Blogs" />
       <GlassBox text="Latest tech News." />
 
-      <div className="text-center mb-12">
+      <div className="text-center">
         <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
           Discover our latest insights, stories, and updates to
-          help you stay informed and inspired.
+          help you stay informed to the latest technological evolving world around us.
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      {/* date sort */}
+
+      <div className="flex justify-center items-center mt-10 mb-5">
+        <div className="relative inline-block">
+          <select
+            value={selectedSort}
+            onChange={(e) => handleSortChange(e.target.value)}
+            className="border cursor-pointer px-4 py-2 pr-10 appearance-none rounded-md focus:outline-none focus:ring-0"
+            aria-label="Sort blogs"
+          >
+            {sortOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+
+          <FaChevronDown
+            className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-xs"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-3 mb-6">
         {categories.map((cat) => (
           <button
             key={cat}
