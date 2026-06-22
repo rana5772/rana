@@ -7,11 +7,11 @@ import {
 } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import axios from "axios";
+import Select from "react-select";
 import Heading from "../components/Heading";
 import GlassBox from "../components/GlassBox";
 import BlogCard from "../components/BlogCard";
 import BlogSkeleton from "../components/BlogSkeleton";
-import { FaChevronDown } from "react-icons/fa";
 
 const categories = [
   "all",
@@ -24,8 +24,8 @@ const categories = [
 ];
 
 const sortOptions = [
-  { value: "latest", label: "Sort by : Latest" },
-  { value: "oldest", label: "Sort by : Oldest" },
+  { value: "latest", label: "Sort by: Latest" },
+  { value: "oldest", label: "Sort by: Oldest" },
 ];
 
 const BlogsPage = () => {
@@ -151,26 +151,37 @@ const BlogsPage = () => {
 
       {/* date sort */}
 
+      {/* date sort */}
       <div className="flex justify-center items-center mt-10 mb-5">
-        <div className="relative inline-block">
-          <select
-            value={selectedSort}
-            onChange={(e) => handleSortChange(e.target.value)}
-            className="border cursor-pointer px-4 py-2 pr-10 appearance-none rounded-md focus:outline-none focus:ring-0"
-            aria-label="Sort blogs"
-          >
-            {sortOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
-
-          <FaChevronDown
-            className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-xs"
-            aria-hidden="true"
-          />
-        </div>
+        <Select
+          value={sortOptions.find((opt) => opt.value === selectedSort)}
+          onChange={(selected) => handleSortChange(selected.value)}
+          options={sortOptions}
+          isSearchable={false}
+          aria-label="Sort blogs"
+          styles={{
+            control: (base, state) => ({
+              ...base,
+              minWidth: 200,
+              borderRadius: "0.375rem",
+              borderColor: state.isFocused ? "#6366f1" : "#d1d5db",
+              boxShadow: state.isFocused ? "0 0 0 1px #6366f1" : "none",
+              cursor: "pointer",
+              "&:hover": { borderColor: "#6366f1" },
+            }),
+            option: (base, state) => ({
+              ...base,
+              cursor: "pointer",
+              backgroundColor: state.isSelected
+                ? "#6366f1"
+                : state.isFocused
+                  ? "#eef2ff"
+                  : "white",
+              color: state.isSelected ? "white" : "#111827",
+            }),
+            indicatorSeparator: () => ({ display: "none" }),
+          }}
+        />
       </div>
 
       <div className="flex flex-wrap justify-center gap-3 mb-6">
