@@ -54,4 +54,33 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+  <loc>https://rana.net.in/blog/seo-strategies-for-2026</loc>
+  <lastmod>2026-06-22</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://rana.net.in/blog/scaling-a-saas-startup</loc>
+  <lastmod>2026-06-19</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://rana.net.in/blog/quantum-computing-explained</loc>
+  <lastmod>2026-06-16</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://rana.net.in/blog/building-custom-gpt-agents</loc>
+  <lastmod>2026-06-13</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://rana.net.in/blog/design-and-color-why-it-matters</loc>
+  <lastmod>2026-06-10</lastmod>
+  <priority>0.6</priority>
+</url>
 </urlset>
