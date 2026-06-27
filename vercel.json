@@ -2,6 +2,10 @@
   "installCommand": "npm install --legacy-peer-deps",
   "rewrites": [
     {
+      "source": "/sitemap.xml",
+      "destination": "https://blogs.rana.net.in/sitemap.xml"
+    },
+    {
       "source": "/((?!api/|static/|_next/|[\\w-]+\\.\\w+).*)",
       "destination": "/index.html"
     }
