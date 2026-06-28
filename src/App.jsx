@@ -88,7 +88,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/faqs" element={<FAQsPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-&-conditions" element={<TnC />} />
+              <Route path="/terms-and-conditions" element={<TnC />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>

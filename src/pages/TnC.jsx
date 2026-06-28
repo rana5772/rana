@@ -12,7 +12,7 @@ const TnC = () => {
           name="description"
           content="Official terms and conditions for rana.net.in. Services include web development, mobile apps, and AI solutions by Vaibhav Rana."
         />
-        <link rel="canonical" href="https://rana.net.in/terms-&-conditions" />
+        <link rel="canonical" href="https://rana.net.in/terms-and-conditions" />
       </Helmet>
 
       <div className="max-w-6xl mt-20 mx-auto">

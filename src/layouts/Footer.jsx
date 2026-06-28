@@ -92,7 +92,7 @@ function Footer() {
                 </NavLink>
 
                 <NavLink
-                  to="/terms-&-conditions"
+                  to="/terms-and-conditions"
                   className="inline-block underline text-black link-primary"
                 >
                   Terms & Conditions
