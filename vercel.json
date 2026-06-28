@@ -4,7 +4,6 @@
     {
       "source": "/sitemap.xml",
       "destination": "https://blogs.rana.net.in/sitemap.xml",
-      "permanent": true
     }
   ],
   "rewrites": [
