@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/sitemap.xml",
-      "destination": "https://blogs.rana.net.in/sitemap.xml"
+      "destination": "/api/sitemap"
     },
     {
       "source": "/((?!api/|static/|_next/|[\\w-]+\\.\\w+).*)",
